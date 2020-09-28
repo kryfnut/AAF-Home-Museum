@@ -1,0 +1,15 @@
+{
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-homemuseum-production-112347-authRole",
+      "UnauthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-production-112347-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-production-112347-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-homemuseum-production-112347-deployment",
+      "UnauthRoleName": "amplify-homemuseum-production-112347-unauthRole",
+      "StackName": "amplify-homemuseum-production-112347",
+      "StackId": "arn:aws:cloudformation:us-east-1:424193818350:stack/amplify-homemuseum-production-112347/0a22dd00-013a-11eb-9cd3-0ec6977a61f1",
+      "AmplifyAppId": "d1xgzraqiksws3"
+    }
+  }
+}

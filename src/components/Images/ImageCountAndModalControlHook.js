@@ -4,6 +4,7 @@ import {listImages} from "../../graphql/queries";
 import gql from 'graphql-tag';
 import {Spin, Button} from "antd";
 import {SmileOutlined} from '@ant-design/icons';
+import ImageViewAndUploadModal from "./ImageViewAndUploadModal";
 
 export default function ImageNumberHook({basicId}) {
 
@@ -70,6 +71,7 @@ export default function ImageNumberHook({basicId}) {
         fontSize: '20px'
       }}>{items.length}</span>
       <Button onClick={() => toggle(!visible)}>View & Upload</Button>
+      <ImageViewAndUploadModal visible={visible}/>
     </div>
   )
 }

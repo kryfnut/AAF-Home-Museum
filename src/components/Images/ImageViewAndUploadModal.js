@@ -7,6 +7,8 @@ import {SmileOutlined} from '@ant-design/icons';
 
 export default function ImageViewAndUploadModal({visible}) {
   return (
-    <Modal visible={visible}></Modal>
+    <Modal visible={visible}>
+      123123
+    </Modal>
   )
 }

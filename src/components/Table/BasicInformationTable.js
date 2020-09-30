@@ -69,7 +69,8 @@ export default function BasicInformationTable() {
       title: 'LAST NAME',
       dataIndex: 'lastName',
       key: 'lastName',
-      width: '8%'
+      width: '8%',
+      sorter: (a, b) => a.lastName.localeCompare(b.lastName)
     },
     {
       title: 'COUNTRY',

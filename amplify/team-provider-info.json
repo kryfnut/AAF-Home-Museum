@@ -10,6 +10,11 @@
       "StackName": "amplify-homemuseum-production-112347",
       "StackId": "arn:aws:cloudformation:us-east-1:424193818350:stack/amplify-homemuseum-production-112347/0a22dd00-013a-11eb-9cd3-0ec6977a61f1",
       "AmplifyAppId": "d1xgzraqiksws3"
+    },
+    "categories": {
+      "auth": {
+        "homemuseum352fda01": {}
+      }
     }
   }
 }

@@ -7,6 +7,8 @@ import {Table, Tag, Space, Spin} from 'antd';
 import {SmileOutlined} from '@ant-design/icons';
 
 import ImageNumberHook from "../Images/ImageCountAndModalControlHook";
+import DescriptionHook from "../Descriptions/DescriptionViewAndEditHook";
+import BasicViewAndEditHook from "../BasicInfo/BasicViewAndEditHook";
 
 export default function BasicInformationTable() {
   const {loading, error, data} = useQuery(gql`${listBasics}`, {variables: {limit: 300}});
@@ -102,18 +104,27 @@ export default function BasicInformationTable() {
       )
     },
     {
+      title: 'DESCRIPTION',
+      dataIndex: 'id',
+      key: 'id',
+      width: '12%',
+      render: id => (
+        <DescriptionHook basicId={id}/>
+      )
+    },
+    {
       title: 'TITLE',
       dataIndex: 'title',
       key: 'title',
     },
     {
-      title: 'Action',
-      key: 'action',
-      render: (text, record) => (
-        <Space size="middle">
-          <a>EDIT</a>
-        </Space>
-      ),
+      title: 'ACTION',
+      dataIndex: 'id',
+      key: 'id',
+      width: '12%',
+      render: id => (
+        <BasicViewAndEditHook basicId={id}/>
+      )
     },
   ];
 

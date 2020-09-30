@@ -1,24 +1,19 @@
 import React, {useState} from "react";
 import {useQuery} from "react-apollo-hooks";
-import {listImages} from "../../graphql/queries";
+import {getBasic} from "../../graphql/queries";
 import gql from 'graphql-tag';
 import {Spin, Button} from "antd";
 import {SmileOutlined} from '@ant-design/icons';
-import ImageViewAndUploadModal from "./ImageViewAndUploadModal";
+import BasicViewAndEditModal from "./BasicViewAndEditModal";
 
-export default function ImageNumberHook({basicId}) {
+export default function DescriptionHook({basicId}) {
 
   // edit image modal state control
   const [visible, toggle] = useState(false);
 
-  const {loading, error, data} = useQuery(gql`${ listImages }`, {
+  const {loading, error, data} = useQuery(gql`${ getBasic }`, {
     variables: {
-      limit: 20,
-      filter: {
-        basicId: {
-          contains: basicId
-        }
-      }
+        id: basicId
     }
   })
 
@@ -58,21 +53,19 @@ export default function ImageNumberHook({basicId}) {
     </div>)
   }
 
-  const {items} = data.listImages;
-
   return (
     <div style={{
       display: "flex",
       justifyContent: "space-around",
       alignItems: "center"
     }}>
-      <span style={{
-        color: items.length === 0 ? '#e74e4e' : '#000000',
-        fontSize: '20px'
-      }}>{items.length}</span>
-      <Button onClick={() => toggle(!visible)}>Preview & Upload</Button>
-      <ImageViewAndUploadModal basicId={basicId} images={items.map(i => i.url)} toggle={() => toggle(!visible)}
-                               visible={visible}/>
+      <Button onClick={() => toggle(!visible)}>Edit</Button>
+      <BasicViewAndEditModal
+        basicId={basicId}
+        item={data.getBasic}
+        toggle={() => toggle(!visible)}
+        visible={visible}
+      />
     </div>
   )
 }

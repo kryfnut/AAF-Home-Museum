@@ -11,7 +11,7 @@ export default class S3ImageUpload extends React.Component {
   onChange(e) {
     const file = e.target.files[0];
     Storage.put(this.props.fileName, file, {
-      contentType: 'image/png'
+      contentType: 'image/jpeg'
     })
       .then (result => this.props.onSuccess(result))
       .catch(err => console.log(err));
@@ -20,7 +20,7 @@ export default class S3ImageUpload extends React.Component {
   render() {
     return (
       <input
-        type="file" accept='image/png'
+        type="file" accept='image/jpeg, image/jpg'
         onChange={(evt) => this.onChange(evt)}
       />
     )

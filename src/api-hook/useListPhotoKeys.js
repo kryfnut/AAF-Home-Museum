@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
-import {listBasics} from "../graphql/queries";
+import {listImages} from "../graphql/queries";
 
 import {API, graphqlOperation} from 'aws-amplify'
 
 
-export default function useListTable() {
+export default function useListPhotoKeys(id) {
 
   const [loading, setLoadState] = useState(true);
   const [error, setError] = useState(undefined);
@@ -12,7 +12,14 @@ export default function useListTable() {
 
   const fetchResponse = async () => {
     try {
-      return await API.graphql(graphqlOperation(listBasics, {limit: 300}));
+      return await API.graphql(graphqlOperation(listImages, {
+        limit: 100,
+        filter: {
+          basicId: {
+            contains: id
+          }
+        }
+      }));
     } catch (err) {
       throw new Error(err.message);
     }
@@ -20,7 +27,7 @@ export default function useListTable() {
 
   useEffect(() => {
     fetchResponse()
-      .then(result => setData(result.data.listBasics.items))
+      .then(result => setData(result.data.listImages.items))
       .catch(e => setError(e))
       .finally(() => setLoadState(false))
   }, [])
@@ -29,7 +36,5 @@ export default function useListTable() {
     loading,
     error,
     data,
-    setData
   }
-
 }

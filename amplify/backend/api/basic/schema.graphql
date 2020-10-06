@@ -10,6 +10,7 @@ type Basic @model {
   lastName: String!
   nationality: [Country]!
   title: String!
+  images: [String]
 }
 
 type Image @model {

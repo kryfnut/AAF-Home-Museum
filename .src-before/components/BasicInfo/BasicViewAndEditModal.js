@@ -28,11 +28,11 @@ export default function BasicViewAndEditModal({visible, toggle, basicId, item}) 
         title: text,
         id: basicId
       },
-      // condition: {
-      //   id: {
-      //     eq: basicId
-      //   }
-      // }
+      condition: {
+        id: {
+          eq: basicId
+        }
+      }
     }
   })
 

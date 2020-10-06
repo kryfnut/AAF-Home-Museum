@@ -4,7 +4,7 @@ import {ApolloProvider} from 'react-apollo';
 import {ApolloProvider as ApolloHooksProvider} from "react-apollo-hooks";
 import client from './apollo-client';
 import {withAuthenticator} from '@aws-amplify/ui-react'
-import awsconfig from './constant/aws-exports';
+import awsconfig from './aws-exports';
 import Dashboard from "./page/Dashboard";
 
 Amplify.configure(awsconfig);

@@ -13,7 +13,7 @@ export default function useListPhotoKeys(id) {
   const fetchResponse = async () => {
     try {
       return await API.graphql(graphqlOperation(listImages, {
-        limit: 100,
+        limit: 10000,
         filter: {
           basicId: {
             contains: id

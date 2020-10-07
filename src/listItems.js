@@ -9,14 +9,28 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import {
+    Switch,
+    Link
+} from "react-router-dom";
 
 export const mainListItems = (
-  <div>
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="EDIT INFORMATION" />
-    </ListItem>
-  </div>
+    <div>
+        <Link to="/editor">
+            <ListItem button>
+                <ListItemIcon>
+                    <PeopleIcon/>
+                </ListItemIcon>
+                <ListItemText style={{color: "black"}} primary="EDIT INFORMATION"/>
+            </ListItem>
+        </Link>
+        <Link to="/gallery">
+            <ListItem button>
+                <ListItemIcon>
+                    <DashboardIcon/>
+                </ListItemIcon><
+                ListItemText style={{color: "black"}} primary="PHOTO GALLERY"/>
+            </ListItem>
+        </Link>
+    </div>
 );

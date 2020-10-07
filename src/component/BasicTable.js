@@ -6,6 +6,8 @@ import MaterialTable from 'material-table';
 import InformationEditDialog from "./InformationEditDialog";
 
 import useListTable from "../api-hook/useListTable";
+import {API, graphqlOperation} from "aws-amplify";
+import {listImages} from "../graphql/queries";
 
 const FixedGrid = function (props) {
     return (
@@ -44,6 +46,28 @@ export default function BasicTable() {
     }
 
     if (data) {
+
+        // let index = 0;
+        //
+        // data.forEach(async ({id, lastName}) => {
+        //     let result = await API.graphql(graphqlOperation(listImages, {
+        //         limit: 10000,
+        //         filter: {
+        //             basicId: {
+        //                 contains: id
+        //             }
+        //         }
+        //     }));
+        //
+        //     if (result.data.listImages.items.length === 0) {
+        //         index++;
+        //         console.log(lastName);
+        //     }
+        // })
+        //
+        // setTimeout(() => {
+        //     console.log(index);
+        // }, 10000)
 
         return (
             <Grid container>

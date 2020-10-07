@@ -13,8 +13,10 @@ export default function Uploader({onSuccess, id, index}) {
         }
 
         let uploadQueue = fileList.map(async file => {
+            console.log(file);
             try {
-                const result = await Storage.put(`${id}-${Date.now()}`, file, {
+                console.log(Date.now() + Math.random() * Math.random() + file.name)
+                const result = await Storage.put(`${id}-${Date.now() + Math.random() * Math.random() + file.name}`, file, {
                     contentType: 'image/jpeg'
                 });
                 list = [

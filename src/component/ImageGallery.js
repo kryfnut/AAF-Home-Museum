@@ -42,12 +42,12 @@ const sizeMap = [
 ]
 
 const handleImageLinkAndSize = ({url: key, id}) => {
-    const src = `https://homemuseumbucket112347-production.s3.amazonaws.com/public/${key}`;
+    const src = `https://homemuseumbucket112347-production.s3.amazonaws.com/public/${encodeURIComponent(key)}`;
     const {width, height} = sizeMap[randomNum(0, 2)];
     return {
         src,
-        width: 1,
-        height: 1,
+        width,
+        height,
         title: id
     }
 }

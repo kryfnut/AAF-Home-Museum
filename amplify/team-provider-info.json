@@ -1,0 +1,38 @@
+{
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-homemuseum-production-112347-authRole",
+      "UnauthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-production-112347-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-production-112347-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-homemuseum-production-112347-deployment",
+      "UnauthRoleName": "amplify-homemuseum-production-112347-unauthRole",
+      "StackName": "amplify-homemuseum-production-112347",
+      "StackId": "arn:aws:cloudformation:us-east-1:424193818350:stack/amplify-homemuseum-production-112347/0a22dd00-013a-11eb-9cd3-0ec6977a61f1",
+      "AmplifyAppId": "d1xgzraqiksws3"
+    },
+    "categories": {
+      "auth": {
+        "homemuseum352fda01": {}
+      }
+    }
+  },
+  "museum": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-homemuseum-museum-200244-authRole",
+      "UnauthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-museum-200244-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::424193818350:role/amplify-homemuseum-museum-200244-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-homemuseum-museum-200244-deployment",
+      "UnauthRoleName": "amplify-homemuseum-museum-200244-unauthRole",
+      "StackName": "amplify-homemuseum-museum-200244",
+      "StackId": "arn:aws:cloudformation:us-east-1:424193818350:stack/amplify-homemuseum-museum-200244/32f1b810-095e-11eb-a517-1246411399d1",
+      "AmplifyAppId": "d1xgzraqiksws3"
+    },
+    "categories": {
+      "auth": {
+        "homemuseum352fda01": {}
+      }
+    }
+  }
+}

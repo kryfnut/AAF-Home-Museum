@@ -47,11 +47,10 @@ export default function Launcher() {
     }),
   });
 
-  const setCurrentInterval = () => intervalSetter(setTimeout(() => { refresh(); }, 10000));
-
-  setInterval(() => {
-    refresh();
-  }, 10000);
+  const setCurrentInterval = () => {
+    const itv = setTimeout(() => { refresh(); console.log(123); }, 10000);
+    intervalSetter(itv);
+  };
 
   return (
     <LauncherGallery

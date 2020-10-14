@@ -58,18 +58,17 @@ export default function LauncherGallery({
 }) {
   const [loaded, load] = useState(false);
 
-  resetInterval();
   useEffect(() => {
     Promise.all(images.map((image) => new Promise((resolve, reject) => {
       const img = new Image();
       img.src = IMAGE_URL_PREFIX + image.url;
-      img.onload = () => resolve();
+      img.onload = () => resolve() && resetInterval();
       img.onerror = (e) => reject(e);
     })))
     // eslint-disable-next-line no-mixed-operators
-      .then(() => !interval && setCurrentInterval() || load(true))
+      .then(() => setCurrentInterval() || load(true))
       .catch(() => resetInterval() || load(false));
-  }, []);
+  }, [images]);
 
   if (!loaded) {
     return (

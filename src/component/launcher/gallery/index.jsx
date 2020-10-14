@@ -54,7 +54,7 @@ const makeImagePositionRandom = (images) => images.map(({
 });
 
 export default function LauncherGallery({
-  images, resetInterval, setCurrentInterval,
+  images, resetInterval, setCurrentInterval, interval,
 }) {
   const [loaded, load] = useState(false);
 
@@ -66,7 +66,8 @@ export default function LauncherGallery({
       img.onload = () => resolve();
       img.onerror = (e) => reject(e);
     })))
-      .then(() => setCurrentInterval() || load(true))
+    // eslint-disable-next-line no-mixed-operators
+      .then(() => !interval && setCurrentInterval() || load(true))
       .catch(() => resetInterval() || load(false));
   }, []);
 

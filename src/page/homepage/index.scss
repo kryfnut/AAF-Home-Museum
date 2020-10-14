@@ -1,0 +1,32 @@
+.home-museum-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFF59B;
+  cursor: default;
+}
+
+.home-museum-title {
+  /* Home museum */
+  font-family: B612, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10vw;
+  line-height: 0;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  color: #FFF59B;
+  padding:18px;
+  text-shadow: 2px 2px black, -2px -2px black,
+  2px -2px black, -2px 2px black;
+  margin: 5vw;
+}

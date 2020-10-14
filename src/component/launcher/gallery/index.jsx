@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import propTypes from 'prop-types';
 import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
@@ -54,9 +55,11 @@ const makeImagePositionRandom = (images) => images.map(({
 });
 
 export default function LauncherGallery({
-  images, resetInterval, setCurrentInterval, interval,
+  images, resetInterval, setCurrentInterval,
 }) {
   const [loaded, load] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     Promise.all(images.map((image) => new Promise((resolve, reject) => {
@@ -68,7 +71,7 @@ export default function LauncherGallery({
     // eslint-disable-next-line no-mixed-operators
       .then(() => setCurrentInterval() || load(true))
       .catch(() => resetInterval() || load(false));
-  }, [images]);
+  }, [images, resetInterval, setCurrentInterval]);
 
   if (!loaded) {
     return (
@@ -79,7 +82,7 @@ export default function LauncherGallery({
   }
 
   return (
-    <div className="launcher-gallery-container">
+    <div onClick={() => history.push('/home')} className="launcher-gallery-container">
       {
               makeImagePositionRandom(images).map(({
                 id, url, width, height, startX, startY, endX, endY,

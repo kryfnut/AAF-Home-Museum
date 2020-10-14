@@ -3,9 +3,9 @@ import React, {
 } from 'react';
 import './index.scss';
 import { useTransition, animated } from 'react-spring';
-// import gql from 'graphql-tag';
+import propTypes from 'prop-types';
 
-export default function ArtTitle() {
+function ArtTitle({ onJumpToMenu }) {
   const ref = useRef([]);
   const [items, set] = useState([]);
   const transitions = useTransition(items, null, {
@@ -45,19 +45,21 @@ export default function ArtTitle() {
         textShadow: '2px 2px black, -2px -2px black,2px -2px black, -2px 2px black',
         margin: '5vw',
       },
-      {
-        transform: 'perspective(600px) rotateX(40deg)',
-      },
-      {
-        transform: 'perspective(600px) rotateX(0deg)',
-      },
+      // {
+      //   transform: 'perspective(600px) rotateX(40deg)',
+      // },
+      // {
+      //   transform: 'perspective(600px) rotateX(0deg)',
+      // },
     ],
     leave: [
       {
         innerHeight: 0,
+        margin: '10vh',
       },
       {
         opacity: 0,
+        margin: '10vh',
       },
     ],
   });
@@ -67,6 +69,16 @@ export default function ArtTitle() {
     ref.current = [];
     set([]);
     ref.current.push(setTimeout(() => set(['HOME', 'MUSEUM']), 1000));
+    setTimeout(() => {
+      onJumpToMenu();
+    }, 1000);
+  }, [onJumpToMenu]);
+
+  const jumpToMenu = useCallback(() => {
+    ref.current.map(clearTimeout);
+    ref.current = [];
+    set([]);
+    ref.current.push(setTimeout(() => set([])));
   }, []);
 
   useEffect(() => reset(), [reset]);
@@ -74,27 +86,16 @@ export default function ArtTitle() {
   return (
     <div>
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-        <animated.div className="transitions-item" key={key} style={rest}>
+        <animated.div className="transitions-item" key={key} style={rest} onClick={jumpToMenu}>
           <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
         </animated.div>
       ))}
     </div>
   );
-  // return (
-  //   <>
-  //     {/* Use it! */}
-  //     <GoogleFontLoader
-  //       fonts={[
-  //         {
-  //           font: 'B612',
-  //           weights: [400, 700],
-  //         },
-  //       ]}
-  //       subsets={['cyrillic-ext', 'greek']}
-  //     />
-  //     <div className="home-museum-container">
-  //       <p className="home-museum-title">HOME</p>
-  //       <p className="home-museum-title">MUSEUM</p>
-  //     </div>
-  //   </>
 }
+
+ArtTitle.propTypes = {
+  onJumpToMenu: propTypes.func.isRequired,
+};
+
+export default ArtTitle;

@@ -58,6 +58,8 @@ export default function LauncherGallery({
 }) {
   const [loaded, load] = useState(false);
 
+  resetInterval();
+
   Promise.all(images.map((image) => new Promise((resolve, reject) => {
     const img = new Image();
     img.src = IMAGE_URL_PREFIX + image.url;

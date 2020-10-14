@@ -76,6 +76,8 @@ export const createImage = /* GraphQL */ `
       id
       basicId
       url
+      width
+      height
       createdAt
       updatedAt
     }
@@ -90,6 +92,8 @@ export const updateImage = /* GraphQL */ `
       id
       basicId
       url
+      width
+      height
       createdAt
       updatedAt
     }
@@ -104,6 +108,8 @@ export const deleteImage = /* GraphQL */ `
       id
       basicId
       url
+      width
+      height
       createdAt
       updatedAt
     }

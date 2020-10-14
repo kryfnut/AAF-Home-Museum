@@ -52,6 +52,8 @@ export const getImage = /* GraphQL */ `
       id
       basicId
       url
+      width
+      height
       createdAt
       updatedAt
     }
@@ -68,6 +70,8 @@ export const listImages = /* GraphQL */ `
         id
         basicId
         url
+        width
+        height
         createdAt
         updatedAt
       }

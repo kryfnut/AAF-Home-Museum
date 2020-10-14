@@ -1,6 +1,6 @@
-/** eslint-disabled */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+// eslint-disable-next-line react/jsx-filename-extension
+ReactDOM.render(<App />, document.getElementById('root'));

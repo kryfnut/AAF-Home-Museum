@@ -17,6 +17,8 @@ type Image @model {
   id: ID!
   basicId: String!
   url: String!
+  width: Int!
+  height: Int!
 }
 
 type Description @model {

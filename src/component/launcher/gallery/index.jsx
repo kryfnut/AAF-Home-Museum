@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
+import LauncherLoading from '../loading';
 
 const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
 const { innerHeight, innerWidth } = window;
@@ -52,7 +53,28 @@ const makeImagePositionRandom = (images) => images.map(({
   };
 });
 
-export default function LauncherGallery({ images }) {
+export default function LauncherGallery({
+  images, resetInterval, setCurrentInterval,
+}) {
+  const [loaded, load] = useState(false);
+
+  Promise.all(images.map((image) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = IMAGE_URL_PREFIX + image.url;
+    img.onload = () => resolve();
+    img.onerror = (e) => reject(e);
+  })))
+    .then(() => setCurrentInterval() || load(true))
+    .catch(() => resetInterval() || load(false));
+
+  if (!loaded) {
+    return (
+      <div className="launcher-gallery-container">
+        <LauncherLoading />
+      </div>
+    );
+  }
+
   return (
     <div className="launcher-gallery-container">
       {
@@ -79,4 +101,6 @@ export default function LauncherGallery({ images }) {
 LauncherGallery.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   images: propTypes.array.isRequired,
+  resetInterval: propTypes.func.isRequired,
+  setCurrentInterval: propTypes.func.isRequired,
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import { listImages } from '../../graphql/queries';
@@ -14,6 +14,10 @@ export default function Launcher() {
         limit: 30,
       },
     });
+
+  const [interval, intervalSetter] = useState(undefined);
+
+  const resetInterval = () => window.clearInterval(interval);
 
   if (loading) {
     return (
@@ -43,11 +47,18 @@ export default function Launcher() {
     }),
   });
 
+  const setCurrentInterval = () => intervalSetter(setInterval(() => { refresh(); }, 10000));
+
   setInterval(() => {
     refresh();
   }, 10000);
 
   return (
-    <LauncherGallery images={items} />
+    <LauncherGallery
+      interval={interval}
+      setCurrentInterval={setCurrentInterval}
+      resetInterval={resetInterval}
+      images={items}
+    />
   );
 }

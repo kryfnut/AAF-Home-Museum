@@ -17,7 +17,7 @@ export default function Launcher() {
 
   const [interval, intervalSetter] = useState(undefined);
 
-  const resetInterval = () => window.clearInterval(interval);
+  const resetInterval = () => window.clearTimeout(interval);
 
   if (loading) {
     return (
@@ -47,7 +47,7 @@ export default function Launcher() {
     }),
   });
 
-  const setCurrentInterval = () => intervalSetter(setInterval(() => { refresh(); }, 10000));
+  const setCurrentInterval = () => intervalSetter(setTimeout(() => { refresh(); }, 10000));
 
   setInterval(() => {
     refresh();

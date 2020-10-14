@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
@@ -59,15 +59,16 @@ export default function LauncherGallery({
   const [loaded, load] = useState(false);
 
   resetInterval();
-
-  Promise.all(images.map((image) => new Promise((resolve, reject) => {
-    const img = new Image();
-    img.src = IMAGE_URL_PREFIX + image.url;
-    img.onload = () => resolve();
-    img.onerror = (e) => reject(e);
-  })))
-    .then(() => setCurrentInterval() || load(true))
-    .catch(() => resetInterval() || load(false));
+  useEffect(() => {
+    Promise.all(images.map((image) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = IMAGE_URL_PREFIX + image.url;
+      img.onload = () => resolve();
+      img.onerror = (e) => reject(e);
+    })))
+      .then(() => setCurrentInterval() || load(true))
+      .catch(() => resetInterval() || load(false));
+  }, []);
 
   if (!loaded) {
     return (

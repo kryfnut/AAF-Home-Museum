@@ -12,17 +12,36 @@ export default function useCreatePhotoKeys(id, urls) {
 
   const [submit] = useMutation(gql`${createImage}`)
 
+  const resolveWidthHeight = (url) => {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.src = url;
+      img.onload = function () {
+        resolve({width: img.width, height: img.height})
+      }
+    })
+  }
+
   useEffect(() => {
 
-    let submitQueue = urls.map(url => submit({
-      variables: {
-        input:
-          {
-            basicId: id,
-            url
-          },
-      }
-    }));
+    let submitQueue = urls.map(url => {
+
+      return resolveWidthHeight(url)
+          .then(({width, height})=> {
+            submit({
+              variables: {
+                input:
+                    {
+                      basicId: id,
+                      url,
+                      width,
+                      height,
+                    },
+              }
+            });
+          })
+
+    });
 
     Promise.all([...submitQueue])
       .then(result => {

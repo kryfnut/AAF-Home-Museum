@@ -1,0 +1,29 @@
+.menu-container {
+  position: absolute;
+  overflow: hidden;
+  background: #FFF59B;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.menu-item-container {
+  height: 42vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+
+.slogan-container {
+  height: 16vh;
+  width: 100%;
+  background: #000000;
+}

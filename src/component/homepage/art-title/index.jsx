@@ -69,17 +69,17 @@ function ArtTitle({ onJumpToMenu }) {
     ref.current = [];
     set([]);
     ref.current.push(setTimeout(() => set(['HOME', 'MUSEUM']), 1000));
-    setTimeout(() => {
-      onJumpToMenu();
-    }, 1000);
-  }, [onJumpToMenu]);
+  }, []);
 
   const jumpToMenu = useCallback(() => {
     ref.current.map(clearTimeout);
     ref.current = [];
     set([]);
     ref.current.push(setTimeout(() => set([])));
-  }, []);
+    setTimeout(() => {
+      onJumpToMenu();
+    }, 1000);
+  }, [onJumpToMenu]);
 
   useEffect(() => reset(), [reset]);
 

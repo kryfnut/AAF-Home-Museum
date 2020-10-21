@@ -1,0 +1,95 @@
+.menu-item {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease-in;
+  background: #FFF59B;
+  transform: perspective(600px) rotateX(0deg);
+  font-family: B612, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.5vw;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+
+.menu-icon {
+  position: absolute;
+  right: 1vw;
+  bottom: 1vw;
+  animation: showText 1.3s ease-in;
+}
+
+.menu-item-top-container .menu-item:nth-of-type(1) {
+  color: #CED8B3;
+  animation: 1s turnGreen forwards;
+}
+
+.menu-item-top-container .menu-item:nth-of-type(2) {
+  color: #ffffff;
+  animation: 1s turnWhite forwards;
+}
+
+.menu-item-bottom-container .menu-item:nth-of-type(1) {
+  color: #B4CBD8;
+  animation: 1s turnBlue forwards;
+}
+
+.menu-item-bottom-container .menu-item:nth-of-type(2) {
+  color: #E7CE9D;
+  animation: 1s turnOrange forwards;
+}
+
+.menu-text {
+  animation: showText 1.3s ease-in;
+}
+
+@keyframes turnGreen {
+  to {
+    background: #CED8B3;
+  }
+}
+
+@keyframes turnWhite {
+  to {
+    background: #ffffff;
+  }
+}
+
+@keyframes turnBlue {
+  to {
+    background: #B4CBD8;
+  }
+}
+
+@keyframes turnOrange {
+  to {
+    background: #E7CE9D;
+  }
+}
+
+@keyframes turnBlack {
+  to {
+    background: #000000;
+  }
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

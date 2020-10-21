@@ -22,10 +22,10 @@ function App() {
     <ApolloProvider client={client}>
       <ApolloHooksProvider client={client}>
         <BrowserRouter>
-          <Route exact path="/">
+          <Route exact path="/xxxx">
             <Launcher />
           </Route>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Homepage />
           </Route>
           <Route exact path="/menu">

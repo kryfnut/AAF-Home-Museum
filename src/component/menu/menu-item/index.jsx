@@ -1,13 +1,21 @@
 /* eslint-disable */
-import React from 'react';
+import React, {useState} from 'react';
 import './index.scss';
 import propTypes from 'prop-types';
 
 export default function MenuItem({ title, icon, onClick }) {
+
+    const [clicked, setClick] = useState(false);
+
   return (
-    <div onClick={onClick} className="menu-item">
-      <span className="menu-text">{title}</span>
-      <img className="menu-icon" src={icon} alt={title} />
+    <div onClick={()=> {
+        setClick(true);
+        setTimeout(()=> {
+            onClick()
+        },500)
+    }} className={clicked ? 'menu-item menu-item-clicked': 'menu-item'}>
+      <span className={clicked ? 'menu-text menu-text-clicked' : 'menu-text'}>{title}</span>
+      <img className={clicked ? 'menu-icon menu-icon-clicked' : 'menu-icon'} src={icon} alt={title} />
     </div>
   );
 }

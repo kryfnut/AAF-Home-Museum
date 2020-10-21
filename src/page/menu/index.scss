@@ -10,3 +10,99 @@
   height: 100%;
   cursor: pointer;
 }
+
+.container-mask-guide {
+  position: absolute;
+  overflow: hidden;
+  animation: showGreen 1s forwards;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.container-mask-story {
+  position: absolute;
+  overflow: hidden;
+  animation: showWhite 1s forwards;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.container-mask-wander {
+  position: absolute;
+  overflow: hidden;
+  animation: showBlue 1s forwards;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.container-mask-collection {
+  position: absolute;
+  overflow: hidden;
+  animation: showOrange 1s forwards;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+@keyframes showGreen {
+  from {
+    background: #CED8B3;
+    transform: translate(-100vw, -100vh);
+  }
+  to {
+    background: #CED8B3;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes showWhite {
+  from {
+    background: #FFFFFF;
+    transform: translate(100vw, -100vh);
+  }
+  to {
+    background: #FFFFFF;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes showBlue {
+  from {
+    background: #B4CBD8;
+    transform: translate(-100vw, 100vh);
+  }
+  to {
+    background: #B4CBD8;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes showOrange {
+  from {
+    background: #E7CE9D;
+    transform: translate(100vw, 100vh);
+  }
+  to {
+    background: #E7CE9D;
+    transform: translate(0, 0);
+  }
+}

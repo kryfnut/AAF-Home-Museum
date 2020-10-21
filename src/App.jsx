@@ -14,6 +14,7 @@ import awsconfig from './aws-exports';
 import Launcher from './page/launcher/launcher';
 import Homepage from './page/homepage/homepage';
 import Menu from './page/menu/menu';
+import Guide from './page/guide/guide';
 
 Amplify.configure(awsconfig);
 
@@ -22,14 +23,17 @@ function App() {
     <ApolloProvider client={client}>
       <ApolloHooksProvider client={client}>
         <BrowserRouter>
-          <Route exact path="/xxxx">
+          <Route exact path="/launcher">
             <Launcher />
           </Route>
-          <Route exact path="/">
+          <Route exact path="home">
             <Homepage />
           </Route>
-          <Route exact path="/menu">
+          <Route exact path="/">
             <Menu />
+          </Route>
+          <Route exact path="/guide">
+            <Guide />
           </Route>
         </BrowserRouter>
       </ApolloHooksProvider>

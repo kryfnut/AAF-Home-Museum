@@ -1,0 +1,21 @@
+.contact-list-item {
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  padding: 10px;
+  line-height: 25px;
+  font-size: 1vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: B612, sans-serif;
+  cursor: pointer;
+
+  & .character {
+    position: absolute;
+    top: 50%;
+    left: -1.6vw;
+    transform: translateY(-50%);
+    font-weight: bolder;
+  }
+}

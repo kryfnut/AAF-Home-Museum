@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import { listBasics } from '../../graphql/queries';
 import GuideLoading from '../../component/guide/loading';
+import GuideContact from '../../component/guide/guide-contact';
 
 export default function Guide() {
   const {
@@ -29,8 +30,6 @@ export default function Guide() {
   const { items: contacts } = result;
 
   return (
-    <div>
-      {JSON.stringify(contacts)}
-    </div>
+    <GuideContact contacts={contacts} />
   );
 }

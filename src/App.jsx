@@ -8,6 +8,7 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // Apollo Client Customized
+import GoogleFontLoader from 'react-google-font-loader';
 import client from './apollo-client';
 import awsconfig from './aws-exports';
 // Pages Routers
@@ -20,24 +21,35 @@ Amplify.configure(awsconfig);
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <ApolloHooksProvider client={client}>
-        <BrowserRouter>
-          <Route exact path="/launcher">
-            <Launcher />
-          </Route>
-          <Route exact path="home">
-            <Homepage />
-          </Route>
-          <Route exact path="/">
-            <Menu />
-          </Route>
-          <Route exact path="/guide">
-            <Guide />
-          </Route>
-        </BrowserRouter>
-      </ApolloHooksProvider>
-    </ApolloProvider>
+    <>
+      <GoogleFontLoader
+        fonts={[
+          {
+            font: 'B612',
+            weights: [400, 700],
+          },
+        ]}
+        subsets={['cyrillic-ext', 'greek']}
+      />
+      <ApolloProvider client={client}>
+        <ApolloHooksProvider client={client}>
+          <BrowserRouter>
+            <Route exact path="/">
+              <Launcher />
+            </Route>
+            <Route exact path="/home">
+              <Homepage />
+            </Route>
+            <Route exact path="/menu">
+              <Menu />
+            </Route>
+            <Route exact path="/guide">
+              <Guide />
+            </Route>
+          </BrowserRouter>
+        </ApolloHooksProvider>
+      </ApolloProvider>
+    </>
   );
 }
 

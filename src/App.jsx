@@ -34,7 +34,7 @@ function App() {
       <ApolloProvider client={client}>
         <ApolloHooksProvider client={client}>
           <BrowserRouter>
-            <Route exact path="/launcher">
+            <Route exact path="/">
               <Launcher />
             </Route>
             <Route exact path="/home">
@@ -43,7 +43,7 @@ function App() {
             <Route exact path="/menu">
               <Menu />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/guide">
               <Guide />
             </Route>
           </BrowserRouter>

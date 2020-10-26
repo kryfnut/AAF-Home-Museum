@@ -42,22 +42,22 @@ function App() {
               <Route exact path="/">
                 <Launcher />
               </Route>
-              {/* Home Page: HOME MUSEUM Display */}
-              <Route exact path="/home">
-                <Homepage />
-              </Route>
-              {/* Menu Selection */}
-              <Route exact path="/menu">
-                <Menu />
-              </Route>
-              {/* Guide Me By Name */}
-              <Route exact path="/guide">
-                <Guide />
-              </Route>
-              {/* User Detail Grid */}
-              <Route exact path="/grid/:id">
-                <Grid />
-              </Route>
+              {/* /!* Home Page: HOME MUSEUM Display *!/ */}
+              {/* <Route exact path="/home"> */}
+              {/*  <Homepage /> */}
+              {/* </Route> */}
+              {/* /!* Menu Selection *!/ */}
+              {/* <Route exact path="/menu"> */}
+              {/*  <Menu /> */}
+              {/* </Route> */}
+              {/* /!* Guide Me By Name *!/ */}
+              {/* <Route exact path="/guide"> */}
+              {/*  <Guide /> */}
+              {/* </Route> */}
+              {/* /!* User Detail Grid *!/ */}
+              {/* <Route exact path="/grid/:id"> */}
+              {/*  <Grid /> */}
+              {/* </Route> */}
             </BrowserRouter>
           </ApolloHooksProvider>
         </ApolloProvider>

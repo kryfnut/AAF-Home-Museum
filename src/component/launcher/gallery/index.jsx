@@ -71,7 +71,7 @@ export default function LauncherGallery({
     // eslint-disable-next-line no-mixed-operators
       .then(() => setCurrentInterval() || load(true))
       .catch(() => resetInterval() || load(false));
-  }, [images]);
+  }, [images, resetInterval, setCurrentInterval]);
 
   if (!loaded) {
     return (
@@ -82,7 +82,7 @@ export default function LauncherGallery({
   }
 
   return (
-    <div onClick={() => history.push('/home')} className="launcher-gallery-container">
+    <div onClick={() => {}} className="launcher-gallery-container">
       {
               makeImagePositionRandom(images).map(({
                 id, url, width, height, startX, startY, endX, endY,

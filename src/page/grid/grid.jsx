@@ -1,0 +1,80 @@
+import React, { useContext } from 'react';
+import gql from 'graphql-tag';
+import { useQuery } from 'react-apollo-hooks';
+import { useParams } from 'react-router-dom';
+
+import { getGridInfo } from '../../graphql/queries';
+import GridLoading from '../../component/grid/loading';
+import { Context } from '../../context/context';
+import GridGallery from '../../component/grid/gallery';
+
+const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
+
+export default function Guide() {
+  const { id } = useParams();
+
+  const [context] = useContext(Context);
+
+  // declare contact list variable
+  let contacts = [];
+
+  if (context) {
+    contacts = context.contacts;
+  }
+
+  const [prev, next] = [
+    contacts[contacts.findIndex((_) => _ === id) - 1],
+    contacts[contacts.findIndex((_) => _ === id) + 1],
+  ];
+
+  const {
+    loading, data, error,
+  } = useQuery(gql`${getGridInfo}`,
+    {
+      variables: {
+        limit: 500,
+        filter: {
+          basicId: {
+            eq: id,
+          },
+        },
+        id,
+      },
+    });
+
+  if (loading) {
+    return <GridLoading />;
+  }
+
+  if (error) {
+    // todo error handler
+    return (
+      <div>error...</div>
+    );
+  }
+
+  let {
+    listImages: {
+      items: images,
+    },
+    // eslint-disable-next-line prefer-const
+    getBasic: contact,
+  } = data;
+
+  images = images.map(({ url, width, height }) => ({
+    url: `${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`,
+    width,
+    height,
+  }));
+
+  return (
+    <div>
+      <GridGallery
+        contact={contact}
+        images={images}
+        prev={prev}
+        next={next}
+      />
+    </div>
+  );
+}

@@ -1,0 +1,109 @@
+.grid-card-horizontal, .grid-card-loading-horizontal, .grid-card-error-horizontal {
+  width: 20vw;
+  height: 14vw;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: 2px solid transparent;
+}
+
+.grid-card-vertical, .grid-card-loading-vertical,.grid-card-error-vertical {
+  width: 14vw;
+  height: 20vw;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: 2px solid transparent;
+}
+
+.grid-card-square, .grid-card-loading-square, .grid-card-error-square {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: 2px solid transparent;
+}
+
+.grid-card-loading-square, .grid-card-loading-horizontal, .grid-card-loading-vertical,
+.grid-card-error-square, .grid-card-error-horizontal, .grid-card-error-vertical,
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-card-square:hover, .grid-card-vertical:hover, .grid-card-horizontal:hover,
+.grid-card-loading-square:hover, .grid-card-loading-vertical:hover, .grid-card-loading-horizontal:hover,
+.grid-card-error-square:hover, .grid-card-error-vertical:hover, .grid-card-error-horizontal:hover,
+{
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* loading */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

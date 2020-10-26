@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import propTypes from 'prop-types';
 import './index.scss';
 import { useHistory } from 'react-router-dom';
+import { Context } from '../../../context/context';
 
 import ContactListItem from '../contact-list-item';
 
@@ -16,6 +17,9 @@ const generateCharactersMap = () => {
 
 export default function GuideContact({ contacts }) {
   const history = useHistory();
+
+  // eslint-disable-next-line no-unused-vars
+  const [context, setContext] = useContext(Context);
 
   const charactersMap = generateCharactersMap();
 
@@ -38,27 +42,31 @@ export default function GuideContact({ contacts }) {
     .map((key) => [...charactersMap[key]])
     .flat();
 
+  if (!context) {
+    setContext({ contacts: contactsForRender.map(({ id }) => id) });
+  }
+
   return (
     <div className="guide-contacts">
       <div className="contact-line" />
       <div className="contact-line" />
       <div className="contact-line" />
       <div className="guide-contacts-container">
-        <div className="guide-contact-list">
+        <div key={1} className="guide-contact-list">
           {
                     contactsForRender
                       .slice(0, contactsForRender.length / 4)
                       .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
                 }
         </div>
-        <div className="guide-contact-list">
+        <div key={2} className="guide-contact-list">
           {
                     contactsForRender
                       .slice(contactsForRender.length / 4, contactsForRender.length / 2)
                       .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
                 }
         </div>
-        <div className="guide-contact-list">
+        <div key={3} className="guide-contact-list">
           {
                     contactsForRender
                     // eslint-disable-next-line no-mixed-operators
@@ -66,7 +74,7 @@ export default function GuideContact({ contacts }) {
                       .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
                 }
         </div>
-        <div className="guide-contact-list">
+        <div key={4} className="guide-contact-list">
           {
                     contactsForRender
                     // eslint-disable-next-line no-mixed-operators

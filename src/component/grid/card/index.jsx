@@ -32,7 +32,7 @@ export default function GridCard({ url, width, height }) {
       </div>
     );
   }
-  if (!error) {
+  if (error) {
     return <div className={`grid-card-error-${boxType}`}>Ops... Error Happened!</div>;
   }
   return (

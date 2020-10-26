@@ -12,12 +12,12 @@ export default function useImage(url) {
     image.src = url;
     // eslint-disable-next-line func-names
     image.onload = function () {
-      load(false);
       if (image.width > image.height) setBoxType('horizontal');
       else if (image.width < image.height) setBoxType('vertical');
       else setBoxType('square');
       setWidth(image.width);
       setHeight(image.height);
+      load(false);
     };
     // eslint-disable-next-line func-names
     image.onerror = function (e) {

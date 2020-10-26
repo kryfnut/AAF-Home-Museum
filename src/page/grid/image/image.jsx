@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useImage from '../../../hooks/useImage';
 import GridLoading from '../../../component/grid/loading';
+import GridImageComponent from '../../../component/grid/image';
 
 const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
 
@@ -13,7 +14,7 @@ export default function GridImage() {
     loading, error, width, height,
   } = useImage(`${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`);
 
-  if (loading) {
+  if (loading || !width || !height) {
     return <GridLoading />;
   }
 
@@ -23,8 +24,6 @@ export default function GridImage() {
   }
 
   return (
-    <div className="grid-image-container">
-      {JSON.stringify({ width, height })}
-    </div>
+    <GridImageComponent url={`${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`} id={id} width={width} height={height} />
   );
 }

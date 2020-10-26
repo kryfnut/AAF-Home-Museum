@@ -4,6 +4,8 @@ export default function useImage(url) {
   const [loading, load] = useState(true);
   const [error, setError] = useState(false);
   const [boxType, setBoxType] = useState(undefined);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     const image = new Image();
@@ -14,6 +16,8 @@ export default function useImage(url) {
       if (image.width > image.height) setBoxType('horizontal');
       else if (image.width < image.height) setBoxType('vertical');
       else setBoxType('square');
+      setWidth(image.width);
+      setHeight(image.height);
     };
     // eslint-disable-next-line func-names
     image.onerror = function (e) {
@@ -22,6 +26,6 @@ export default function useImage(url) {
   }, [loading, error, url]);
 
   return {
-    loading, error, boxType,
+    loading, error, boxType, width, height,
   };
 }

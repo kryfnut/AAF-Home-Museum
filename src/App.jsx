@@ -5,7 +5,7 @@ import Amplify from 'aws-amplify';
 // Third Part Import
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import GoogleFontLoader from 'react-google-font-loader';
 
 import { Context } from './context/context';
@@ -13,6 +13,7 @@ import { Context } from './context/context';
 import client from './apollo-client';
 import awsconfig from './aws-exports';
 // Pages Routers
+import GridRouterSwitch from './component/common/grid-router-switch';
 import Launcher from './page/launcher/launcher';
 import Homepage from './page/homepage/homepage';
 import Menu from './page/menu/menu';
@@ -38,26 +39,37 @@ function App() {
         <ApolloProvider client={client}>
           <ApolloHooksProvider client={client}>
             <BrowserRouter>
-              {/* Launcher: Pics Gallery */}
-              <Route exact path="/">
-                <Launcher />
-              </Route>
-              {/* Home Page: HOME MUSEUM Display */}
-              <Route exact path="/home">
-                <Homepage />
-              </Route>
-              {/* Menu Selection */}
-              <Route exact path="/menu">
-                <Menu />
-              </Route>
-              {/* Guide Me By Name */}
-              <Route exact path="/guide">
-                <Guide />
-              </Route>
-              {/* User Detail Grid */}
-              <Route exact path="/grid/:id">
-                <Grid />
-              </Route>
+              <Switch>
+                {/* Launcher: Pics Gallery */}
+                <Route exact path="/">
+                  <Launcher />
+                </Route>
+                {/* Home Page: HOME MUSEUM Display */}
+                <Route exact path="/home">
+                  <Homepage />
+                </Route>
+                {/* Menu Selection */}
+                <Route exact path="/menu">
+                  <Menu />
+                </Route>
+                {/* Guide Me By Name */}
+                <Route exact path="/guide">
+                  <Guide />
+                </Route>
+                {/* User Detail Grid */}
+                <Route exact path="/grid/:id">
+                  <Grid />
+                </Route>
+                <Route path="/grid-view">
+                  <GridRouterSwitch />
+                </Route>
+                {/* todo 404 page */}
+                <Route>
+                  <div>
+                    404
+                  </div>
+                </Route>
+              </Switch>
             </BrowserRouter>
           </ApolloHooksProvider>
         </ApolloProvider>

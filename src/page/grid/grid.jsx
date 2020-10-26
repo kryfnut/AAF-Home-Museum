@@ -10,7 +10,7 @@ import GridGallery from '../../component/grid/gallery';
 
 const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
 
-export default function Guide() {
+export default function Grid() {
   const { id } = useParams();
 
   const [context] = useContext(Context);
@@ -63,6 +63,7 @@ export default function Guide() {
 
   images = images.map(({ url, width, height }) => ({
     url: `${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`,
+    image: url,
     width,
     height,
   }));

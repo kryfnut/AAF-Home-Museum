@@ -6,7 +6,7 @@ import './index.scss';
 export default function GridGallery({
   prev, next, images, contact,
 }) {
-  const { lastName, firstName } = contact;
+  const { lastName, firstName, id } = contact;
 
   return (
     <div className="grid-gallery-container">
@@ -14,8 +14,18 @@ export default function GridGallery({
         {
                 images
                   .map(
-                    ({ width, height, url }) => (
-                      <GridCard key={url} width={width} height={height} url={url} />
+                    ({
+                      // url is an https url, and image is the key in the bucket
+                      width, height, url, image,
+                    }) => (
+                      <GridCard
+                        id={id}
+                        image={image}
+                        key={url}
+                        width={width}
+                        height={height}
+                        url={url}
+                      />
                     ),
                   )
             }

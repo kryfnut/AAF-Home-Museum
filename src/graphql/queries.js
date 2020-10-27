@@ -144,3 +144,41 @@ export const getGridInfo = /* GraphQL */ `
     }
  }
 `
+
+export const getStoryInfo = /* GraphQL */ `
+ query GetStoryInfo(
+    $filter: ModelBasicFilterInput
+    $limit: Int
+    $nextToken: String
+ ) {
+    listBasics(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        cityResidence
+        contact
+        countryResidence
+        description
+        email
+        firstName
+        id
+        lastName
+        nationality
+        title
+        images
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    listImages(limit: 2000) {
+      items {
+        id
+        basicId
+        url
+        width
+        height
+        createdAt
+        updatedAt
+      }
+    }
+ }
+`

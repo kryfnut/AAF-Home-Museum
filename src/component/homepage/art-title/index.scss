@@ -10,7 +10,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background: #FFF59B;
+  background: radial-gradient(88.77% 88.77% at 50% 50%, rgba(255, 225, 225, 0.69) 0%, rgba(206, 216, 179, 0.69) 42.71%, rgba(180, 203, 216, 0.69) 65.56%, rgba(255, 240, 200, 0) 100%);
   cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: capitalize;
-  color: #FFF59B;
+  color: transparent;
   padding:18px;
   text-shadow: 2px 2px black, -2px -2px black,
   2px -2px black, -2px 2px black;

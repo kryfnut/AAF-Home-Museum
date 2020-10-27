@@ -18,6 +18,7 @@ import Launcher from './page/launcher/launcher';
 import Homepage from './page/homepage/homepage';
 import Menu from './page/menu/menu';
 import Guide from './page/guide/guide';
+import Story from './page/story/story';
 import Grid from './page/grid/grid';
 
 Amplify.configure(awsconfig);
@@ -55,6 +56,10 @@ function App() {
                 {/* Guide Me By Name */}
                 <Route exact path="/guide">
                   <Guide />
+                </Route>
+                {/* Tell Me A Story */}
+                <Route exact path="/story">
+                  <Story />
                 </Route>
                 {/* User Detail Grid */}
                 <Route exact path="/grid/:id">

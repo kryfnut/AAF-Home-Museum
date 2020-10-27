@@ -26,6 +26,7 @@
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^16.13.1",
     "react-google-font-loader": "^1.1.0",
+    "react-infinite-scroll-hook": "^3.0.0",
     "react-konva": "^16.13.0-6",
     "react-marquee-text-component": "^1.0.4",
     "react-router-dom": "^5.2.0",

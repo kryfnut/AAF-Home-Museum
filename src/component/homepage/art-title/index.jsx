@@ -22,9 +22,9 @@ function ArtTitle({ onJumpToMenu }) {
       textAlign: 'center',
       letterSpacing: '-0.03em',
       textTransform: 'capitalize',
-      color: '#FFF59B',
+      color: 'black',
       padding: '18px',
-      textShadow: '2px 2px black, -2px -2px black,2px -2px black, -2px 2px black',
+      // textShadow: '2px 2px black, -2px -2px black,2px -2px black, -2px 2px black',
       margin: '5vw',
     },
     enter: [
@@ -40,9 +40,9 @@ function ArtTitle({ onJumpToMenu }) {
         textAlign: 'center',
         letterSpacing: '-0.03em',
         textTransform: 'capitalize',
-        color: '#FFF59B',
+        color: 'black',
         padding: '18px',
-        textShadow: '2px 2px black, -2px -2px black,2px -2px black, -2px 2px black',
+        // textShadow: '2px 2px black, -2px -2px black,2px -2px black, -2px 2px black',
         margin: '5vw',
       },
       // {

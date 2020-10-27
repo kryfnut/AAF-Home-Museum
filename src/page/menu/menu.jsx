@@ -18,7 +18,14 @@ export default function Menu() {
   const handleClick = (c) => {
     setColor(c);
     setTimeout(() => {
-      history.push('/guide');
+      switch (c) {
+        case 'guide':
+          return history.push('/guide');
+        case 'story':
+          return history.push('/story');
+        default:
+          return history.push('/404');
+      }
     }, 1000);
   };
 

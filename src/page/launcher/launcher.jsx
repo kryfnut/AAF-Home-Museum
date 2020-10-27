@@ -38,17 +38,23 @@ export default function Launcher() {
   const { listImages: currentPageListImages } = data;
   const { items, nextToken } = currentPageListImages;
 
-  const refresh = () => fetchMore({
-    variables: {
-      nextToken,
-    },
-    updateQuery: ((previousQueryResult, { fetchMoreResult }) => {
-      if (fetchMoreResult) {
-        return fetchMoreResult;
-      }
-      return previousQueryResult;
-    }),
-  });
+  const refresh = async () => {
+    try {
+      await fetchMore({
+        variables: {
+          nextToken,
+        },
+        updateQuery: ((previousQueryResult, { fetchMoreResult }) => {
+          if (fetchMoreResult) {
+            return fetchMoreResult;
+          }
+          return previousQueryResult;
+        }),
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const setCurrentInterval = () => {
     const itv = setTimeout(() => { refresh(); }, 10000);

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import propTypes from 'prop-types';
+import MarqueeText from 'react-marquee-text-component';
 import './index.scss';
 
 export default function MenuSlogan({ slogan, onClick }) {
@@ -10,9 +11,11 @@ export default function MenuSlogan({ slogan, onClick }) {
       onClick={onClick}
       className="menu-slogan"
     >
-      <span className="menu-slogan-text">
-        {slogan}
-      </span>
+      <MarqueeText
+          text={slogan}
+          duration={8}
+          repeat={10}
+      />
     </div>
   );
 }

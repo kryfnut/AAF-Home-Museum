@@ -32,7 +32,7 @@
 }
 
 .menu-item-top-container .menu-item:nth-of-type(1) {
-  color: #CED8B3;
+  color: #B4CBD8;
   animation: 1s turnGreen forwards;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .menu-item-bottom-container .menu-item:nth-of-type(1) {
-  color: #B4CBD8;
+  color: #CED8B3;
   animation: 1s turnBlue forwards;
 }
 
@@ -66,7 +66,7 @@
 
 @keyframes turnGreen {
   to {
-    background: #CED8B3;
+    background: #B4CBD8;
   }
 }
 
@@ -78,7 +78,7 @@
 
 @keyframes turnBlue {
   to {
-    background: #B4CBD8;
+    background: #CED8B3;
   }
 }
 

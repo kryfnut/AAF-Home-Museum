@@ -66,7 +66,7 @@
 @keyframes showGreen {
   from {
     background: #CED8B3;
-    transform: translate(-100vw, -100vh);
+    transform: translate(-100vw, 100vh);
   }
   to {
     background: #CED8B3;
@@ -88,7 +88,7 @@
 @keyframes showBlue {
   from {
     background: #B4CBD8;
-    transform: translate(-100vw, 100vh);
+    transform: translate(-100vw, -100vh);
   }
   to {
     background: #B4CBD8;

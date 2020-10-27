@@ -41,12 +41,12 @@ export default function Menu() {
         <div className={`container-mask-${color}`} />
         <MenuContainer
           menuItems={[
-            <MenuItem onClick={() => handleClick('guide')} key={1} icon={iconMenuGuide} title="Guide Me By Name" />,
-            <MenuItem onClick={() => handleClick('story')} key={2} icon={iconMenuStory} title="Tell Me A Story" />,
-            <MenuItem onClick={() => handleClick('wander')} key={3} icon={iconMenuWander} title="I Like To See" />,
-            <MenuItem onClick={() => handleClick('collection')} key={4} icon={iconMenuCollection} title="My Collection" />,
+            <MenuItem direction="top-left" onClick={() => handleClick('wander')} key={3} icon={iconMenuWander} title="I Like To See" />,
+            <MenuItem direction="top-right" onClick={() => handleClick('story')} key={2} icon={iconMenuStory} title="Tell Me A Story" />,
+            <MenuItem direction="bottom-left" onClick={() => handleClick('guide')} key={1} icon={iconMenuGuide} title="Guide Me By Name" />,
+            <MenuItem direction="bottom-right" onClick={() => handleClick('collection')} key={4} icon={iconMenuCollection} title="My Collection" />,
           ]}
-          sloganComponent={<MenuSlogan slogan="About Home Museum" />}
+          sloganComponent={<MenuSlogan slogan="&nbsp;About Home Museum About Home Museum&nbsp;" />}
         />
       </div>
     </>

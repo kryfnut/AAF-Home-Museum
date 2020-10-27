@@ -18,20 +18,26 @@ export default function StoryInfiniteList({
   return (
     <div className="story-container">
       <div className="story-infinite-container">
-        <div className="story-infinite-list">
+        <div ref={infiniteRef} className="story-infinite-list">
           {
                     stories.map(({
-                      firstName, lastName, title, description,
+                      firstName, lastName, title, description, id,
                     }) => (
                       <div className="story-item">
                         <h1 className="story-author">{`${lastName} ${firstName}`}</h1>
-                        <div className="icon-eye" />
+                        {
+                              images.findIndex((item) => item.basicId === id) !== -1
+                                ? <div onClick={() => history.push(`/grid/${id}`)} className="icon-eye">click to show</div>
+                                : null
+                          }
                         <p className="story-title">{title}</p>
                         <p className="story-content">{description}</p>
                       </div>
                     ))
                 }
-          <div className="load-more" />
+          {
+                loading ? <div>loading....</div> : null
+            }
         </div>
       </div>
       <div className="story-footer">

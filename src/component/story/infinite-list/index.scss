@@ -72,15 +72,21 @@
   & .story-item {
 
     & .story-author {
-
+      font-size: 1.2vw;
+      font-weight: normal;
     }
 
-    & .story-eye {
-
+    & .icon-eye {
+      width: 100px;
+      height: 100px;
+      background: cadetblue;
+      margin: 40px;
     }
 
     & .story-title {
-
+      font-size: .8vw;
+      font-weight: bold;
+      font-style: italic;
     }
 
     & .story-content {

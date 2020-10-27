@@ -6,6 +6,9 @@ import ArtTitle from '../../component/homepage/art-title';
 export default function Homepage() {
   const history = useHistory();
 
+  // set body background
+  document.body.style.backgroundColor = '#FFF59B';
+
   return (
     <div className="home-museum-container">
       <ArtTitle onJumpToMenu={() => history.push('/menu')} />

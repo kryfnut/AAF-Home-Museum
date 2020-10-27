@@ -18,7 +18,7 @@ export default function Grid() {
   // declare contact list variable
   let contacts = [];
 
-  if (context) {
+  if (context && context.contacts) {
     contacts = context.contacts;
   }
 
@@ -67,6 +67,9 @@ export default function Grid() {
     width,
     height,
   }));
+
+  // set body background
+  document.body.style.backgroundColor = '#CED8B3';
 
   return (
     <div>

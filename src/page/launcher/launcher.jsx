@@ -19,6 +19,9 @@ export default function Launcher() {
 
   const resetInterval = () => window.clearTimeout(interval);
 
+  // set body background
+  document.body.style.backgroundColor = '#FFF59B';
+
   if (loading) {
     return (
       <LauncherLoading />

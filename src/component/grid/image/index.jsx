@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import CoolLightbox from '../../common/light-box';
+import { Context } from '../../../context/context';
 
 import './index.scss';
 
@@ -7,6 +9,40 @@ export default function GridImageComponent({
   url, id, width, height,
 }) {
   const [isOpen, setOpen] = useState(false);
+  const [context, setContext] = useContext(Context);
+  const history = useHistory();
+
+  let collection;
+
+  if (context) {
+    collection = context.collection;
+  }
+
+  // check if have collection
+  if (!collection) {
+    setContext({ ...context, collection: [] });
+  }
+
+  const collect = () => setContext({
+    ...context,
+    collection: [
+      ...collection,
+      {
+        id, url, width, height,
+      },
+    ],
+  });
+
+  const uncollect = () => setContext({
+    ...context,
+    collection: collection.filter((_) => _.url !== url),
+  });
+
+  // check if have collected
+  const collected = collection && collection
+    .find(
+      (picture) => picture.id === id && picture.url === url,
+    );
 
   const images = [
     {
@@ -17,35 +53,29 @@ export default function GridImageComponent({
     },
   ];
 
-  let dpr;
-
-  const { innerWidth, innerHeight } = window;
-
-  if (width > height) dpr = innerWidth / width;
-  else dpr = innerHeight / height;
-
-  dpr *= 2.5;
-
   return (
     <div className="grid-image-component-container">
       <div className="grid-image-main">
-        <div
-          className="image"
+        <img
+          src={url}
+          alt={id}
           onClick={() => setOpen(true)}
-          style={{
-            width: width / dpr,
-            height: height / dpr,
-            backgroundImage: `url(${url})`,
-          }}
         />
-        <div className="go-text">go text</div>
-        <div className="collect-btn">collect</div>
-        <div className="close-btn">close</div>
+        <div
+          className="go-text"
+          onClick={() => history.push(`/grid-view/information/${id}`)}
+        />
+        <div
+          onClick={() => (collected ? uncollect() : collect())}
+          className={collected ? 'collect-btn-collected' : 'collect-btn-uncollected'}
+        />
+        <div onClick={() => history.goBack()} className="close-btn" />
       </div>
       <div className="grid-image-modal">
         <CoolLightbox
           currentImageIndex={0}
-          setCurrentIndex={() => {}}
+          setCurrentIndex={() => {
+          }}
           isOpen={isOpen}
           onClose={() => setOpen(false)}
           images={images}

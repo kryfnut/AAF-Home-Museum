@@ -43,7 +43,7 @@ export default function GuideContact({ contacts }) {
     .flat();
 
   if (!context) {
-    setContext({ contacts: contactsForRender.map(({ id }) => id) });
+    setContext({ ...context, contacts: contactsForRender.map(({ id }) => id) });
   }
 
   return (

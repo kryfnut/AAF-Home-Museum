@@ -4,6 +4,8 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 
 import { getBasic } from '../../../graphql/queries';
+import GridLoading from '../../../component/grid/loading';
+import GridInformationComponent from '../../../component/grid/information';
 
 /* route for grid image view */
 export default function GridInformation() {
@@ -14,9 +16,19 @@ export default function GridInformation() {
     },
   });
 
+  if (loading) {
+    return <GridLoading />;
+  }
+
+  // TODO error handler
+  if (error) {
+    return <div>error</div>;
+  }
+
+  const { getBasic: information } = data;
+
   return (
-    <div className="grid-information-container">
-      grid information container
-    </div>
+  // eslint-disable-next-line react/jsx-props-no-spreading
+    <GridInformationComponent {...information} />
   );
 }

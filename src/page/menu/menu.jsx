@@ -22,6 +22,9 @@ export default function Menu() {
     }, 1000);
   };
 
+  // set body background
+  document.body.style.backgroundColor = '#FFF59B';
+
   return (
     <>
       {/* Use it! */}

@@ -29,6 +29,9 @@ export default function Guide() {
   const { listBasics: result } = data;
   const { items: contacts } = result;
 
+  // set body background
+  document.body.style.backgroundColor = '#CED8B3';
+
   return (
     <GuideContact contacts={contacts} />
   );

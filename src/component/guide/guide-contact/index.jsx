@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
 import './index.scss';
 import { useHistory } from 'react-router-dom';
@@ -17,6 +17,7 @@ const generateCharactersMap = () => {
 
 export default function GuideContact({ contacts }) {
   const history = useHistory();
+  const containerRef = useRef(null);
 
   // eslint-disable-next-line no-unused-vars
   const [context, setContext] = useContext(Context);
@@ -42,28 +43,66 @@ export default function GuideContact({ contacts }) {
     .map((key) => [...charactersMap[key]])
     .flat();
 
-  if (!context) {
-    setContext({ ...context, contacts: contactsForRender.map(({ id }) => id) });
+  useEffect(() => {
+    setContext({
+      ...context,
+      contacts: contactsForRender.map(({ id }) => id),
+    });
+  }, []);
+
+  if (context) {
+    const { guidePageScrollTop } = context;
+    if (typeof guidePageScrollTop !== 'number') {
+      setContext({
+        ...context,
+        guidePageScrollTop: 0,
+      });
+    }
   }
+
+  useEffect(() => {
+    if (context && context.guidePageScrollTop && containerRef.current) {
+      containerRef.current.scrollTop = context.guidePageScrollTop;
+    }
+  }, [context]);
+
+  const handleClick = () => {
+    setContext({
+      ...context,
+      guidePageScrollTop: containerRef.current.scrollTop,
+    });
+  };
 
   return (
     <div className="guide-contacts">
       <div className="contact-line" />
       <div className="contact-line" />
       <div className="contact-line" />
-      <div className="guide-contacts-container">
+      <div ref={containerRef} className="guide-contacts-container">
         <div key={1} className="guide-contact-list">
           {
                     contactsForRender
                       .slice(0, contactsForRender.length / 4)
-                      .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
+                      .map((contact) => (
+                        <ContactListItem
+                          onClick={handleClick}
+                          key={contact.id}
+                          contact={contact}
+                        />
+                      ))
                 }
         </div>
         <div key={2} className="guide-contact-list">
           {
                     contactsForRender
                       .slice(contactsForRender.length / 4, contactsForRender.length / 2)
-                      .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
+                      .map((contact) => (
+                        <ContactListItem
+                          onClick={handleClick}
+                          key={contact.id}
+                          contact={contact}
+                        />
+                      ))
                 }
         </div>
         <div key={3} className="guide-contact-list">
@@ -71,7 +110,13 @@ export default function GuideContact({ contacts }) {
                     contactsForRender
                     // eslint-disable-next-line no-mixed-operators
                       .slice(contactsForRender.length / 2, contactsForRender.length / 4 * 3)
-                      .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
+                      .map((contact) => (
+                        <ContactListItem
+                          onClick={handleClick}
+                          key={contact.id}
+                          contact={contact}
+                        />
+                      ))
                 }
         </div>
         <div key={4} className="guide-contact-list">
@@ -79,7 +124,13 @@ export default function GuideContact({ contacts }) {
                     contactsForRender
                     // eslint-disable-next-line no-mixed-operators
                       .slice(contactsForRender.length / 4 * 3, contactsForRender.length)
-                      .map((contact) => <ContactListItem key={contact.id} contact={contact} />)
+                      .map((contact) => (
+                        <ContactListItem
+                          onClick={handleClick}
+                          key={contact.id}
+                          contact={contact}
+                        />
+                      ))
                 }
         </div>
       </div>

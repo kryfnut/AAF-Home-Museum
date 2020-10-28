@@ -32,7 +32,7 @@ export default function Grid() {
   } = useQuery(gql`${getGridInfo}`,
     {
       variables: {
-        limit: 500,
+        limit: 2000,
         filter: {
           basicId: {
             eq: id,
@@ -72,13 +72,11 @@ export default function Grid() {
   document.body.style.backgroundColor = '#CED8B3';
 
   return (
-    <div>
-      <GridGallery
-        contact={contact}
-        images={images}
-        prev={prev}
-        next={next}
-      />
-    </div>
+    <GridGallery
+      contact={contact}
+      images={images}
+      prev={prev}
+      next={next}
+    />
   );
 }

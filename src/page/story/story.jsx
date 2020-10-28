@@ -14,12 +14,9 @@ export default function Story() {
     },
   });
 
-  const [hasMore, setHasMore] = useState(true);
   const [fetchMoreLoading, setFetchMoreLoading] = useState(false);
 
   document.body.style.backgroundColor = '#ffffff';
-
-  const setEnded = () => setHasMore(false);
 
   if (loading) {
     return <StoryLoading />;
@@ -32,42 +29,46 @@ export default function Story() {
 
   const { listBasics: { items: stories, nextToken }, listImages: { items: images } } = data;
 
-  const loadMore = () => setFetchMoreLoading(true) || fetchMore({
-    variables: {
-      nextToken,
-    },
-    updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-      setFetchMoreLoading(false);
-      if (
-        fetchMoreResult
-          && fetchMoreResult.listBasics.items
-          && fetchMoreResult.listBasics.items.length
-      ) {
-        if (!fetchMoreResult.listBasics.nextToken) {
-          setEnded();
-        }
-        return {
-          ...previousQueryResult,
-          listBasics: {
-            ...previousQueryResult.listBasics,
-            items: [
-              ...previousQueryResult.listBasics.items,
-              ...fetchMoreResult.listBasics.items,
-            ],
-            nextToken: fetchMoreResult.listBasics.nextToken,
-          },
-        };
-      }
-      return previousQueryResult;
-    },
-  });
+  const loadMore = async () => {
+    try {
+      setFetchMoreLoading(true);
+      await fetchMore({
+        variables: {
+          nextToken,
+        },
+        updateQuery: (previousQueryResult, { fetchMoreResult }) => {
+          setFetchMoreLoading(false);
+          if (
+            fetchMoreResult
+              && fetchMoreResult.listBasics.items
+              && fetchMoreResult.listBasics.items.length
+          ) {
+            return {
+              ...previousQueryResult,
+              listBasics: {
+                ...previousQueryResult.listBasics,
+                items: [
+                  ...previousQueryResult.listBasics.items,
+                  ...fetchMoreResult.listBasics.items,
+                ],
+                nextToken: fetchMoreResult.listBasics.nextToken,
+              },
+            };
+          }
+          return previousQueryResult;
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <StoryInfiniteList
       stories={stories}
       images={images}
       onLoadMore={loadMore}
-      hasNextPage={hasMore}
+      hasNextPage={!!nextToken}
       loading={fetchMoreLoading}
     />
   );

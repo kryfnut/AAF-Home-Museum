@@ -5,12 +5,12 @@ import propTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
 import {useHistory} from 'react-router-dom';
 
-export default function ContactListItem({ contact }) {
+export default function ContactListItem({ contact, onClick }) {
   const [state, toggle] = useState(true);
   const history = useHistory();
   const props = useSpring({opacity: 1, from: {opacity: 0}});
   return (
-    <div className="contact-list-item" onClick={() => history.push(`/grid/${contact.id}`)}>
+    <div className="contact-list-item" onClick={() => onClick() || history.push(`/grid/${contact.id}`)}>
       <animated.div
         style={{
             ...props,

@@ -28,7 +28,7 @@ export default function StoryInfiniteList({
   useEffect(() => {
     setContext({
       ...context,
-      contacts: stories,
+      contacts: stories.map((_) => _.id),
     });
   }, [stories]);
 
@@ -36,7 +36,7 @@ export default function StoryInfiniteList({
     if (context && context.storyPageScrollTop && infiniteRef.current) {
       infiniteRef.current.scrollTop = context.storyPageScrollTop;
     }
-  }, [context, infiniteRef]);
+  }, []);
 
   return (
     <div className="story-container">

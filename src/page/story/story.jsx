@@ -59,7 +59,7 @@ export default function Story() {
         },
       });
     } catch (e) {
-      console.log(e);
+      console.log('graphQL server error');
     }
   };
 

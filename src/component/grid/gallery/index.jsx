@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import GridCard from '../card';
 import './index.scss';
 
@@ -7,6 +8,7 @@ export default function GridGallery({
   prev, next, images, contact,
 }) {
   const { lastName, firstName, id } = contact;
+  const history = useHistory();
 
   return (
     <div className="grid-gallery-container">
@@ -32,7 +34,17 @@ export default function GridGallery({
       </div>
       <div className="guide-footer">
         <div className="contact-name">{`${lastName} ${firstName}`}</div>
-        <div className="guide-tool" />
+        <div className="guide-tool">
+          <div
+            onClick={() => history.replace(`/grid/${prev}`)}
+            className={prev ? 'go-prev' : 'go-prev-nope'}
+          />
+          <div className="go-text" />
+          <div className="go-story" />
+          <div className={next ? 'go-next' : 'go-next-nope'} />
+          <div className="go-collection" />
+          <div className="go-home" />
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { Context } from '../../../context/context';
 import './index.scss';
 
 export default function GridImageComponent({
-  url, id, width, height,
+  url, id, width, height, image
 }) {
   const [isOpen, setOpen] = useState(false);
   const [context, setContext] = useContext(Context);
@@ -63,7 +63,7 @@ export default function GridImageComponent({
         />
         <div
           className="go-text"
-          onClick={() => history.push(`/grid-view/information/${id}`)}
+          onClick={() => history.replace(`/grid-view/information/${image}/${id}`)}
         />
         <div
           onClick={() => (collected ? uncollect() : collect())}

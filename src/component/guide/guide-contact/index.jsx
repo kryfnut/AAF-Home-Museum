@@ -137,7 +137,7 @@ export default function GuideContact({ contacts }) {
       <div className="guide-line">
         <div className="guide-line-title">GUIDE ME BY NAME</div>
         <div className="guide-search" />
-        <div className="guide-back-to-home" onClick={() => history.push('/home')} />
+        <div className="guide-back-to-home" onClick={() => history.goBack()} />
       </div>
     </div>
   );

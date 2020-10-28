@@ -24,6 +24,6 @@ export default function GridImage() {
   }
 
   return (
-    <GridImageComponent url={`${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`} id={id} width={width} height={height} />
+    <GridImageComponent image={url} url={`${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`} id={id} width={width} height={height} />
   );
 }

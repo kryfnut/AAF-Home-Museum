@@ -28,7 +28,7 @@ export default function GridRouterSwitch() {
             <Route path="/grid-view/image/:url/:id" exact>
               <GridImage />
             </Route>
-            <Route path="/grid-view/information/:id" exact>
+            <Route path="/grid-view/information/:url/:id" exact>
               <GridInformation />
             </Route>
           </Switch>

@@ -29,6 +29,7 @@
     "react-infinite-scroll-hook": "^3.0.0",
     "react-konva": "^16.13.0-6",
     "react-marquee-text-component": "^1.0.4",
+    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",

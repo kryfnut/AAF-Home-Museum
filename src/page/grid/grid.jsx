@@ -27,6 +27,9 @@ export default function Grid() {
     contacts[contacts.findIndex((_) => _ === id) + 1],
   ];
 
+  // set body background
+  document.body.style.backgroundColor = '#CED8B3';
+
   const {
     loading, data, error,
   } = useQuery(gql`${getGridInfo}`,

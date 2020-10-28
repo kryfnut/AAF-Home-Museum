@@ -20,6 +20,7 @@ import Menu from './page/menu/menu';
 import Guide from './page/guide/guide';
 import Story from './page/story/story';
 import Grid from './page/grid/grid';
+import Wander from './page/wander/wander';
 
 Amplify.configure(awsconfig);
 
@@ -60,6 +61,9 @@ function App() {
                 {/* Tell Me A Story */}
                 <Route exact path="/story">
                   <Story />
+                </Route>
+                <Route exact path="/wander">
+                  <Wander />
                 </Route>
                 {/* User Detail Grid */}
                 <Route exact path="/grid/:id">

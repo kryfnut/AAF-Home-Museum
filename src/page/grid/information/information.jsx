@@ -20,6 +20,9 @@ export default function GridInformation() {
     return <GridLoading />;
   }
 
+  // set body background
+  document.body.style.backgroundColor = '#CED8B3';
+
   // TODO error handler
   if (error) {
     return <div>error</div>;

@@ -8,7 +8,7 @@ import {
 
 import GridImage from '../../../page/grid/image/image';
 import GridInformation from '../../../page/grid/information/information';
-import Grid from '../../../page/grid/grid';
+import './index.scss';
 
 export default function GridRouterSwitch() {
   const location = useLocation();

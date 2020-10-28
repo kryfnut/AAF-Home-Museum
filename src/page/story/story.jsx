@@ -10,7 +10,7 @@ export default function Story() {
     loading, error, data, fetchMore,
   } = useQuery(gql`${getStoryInfo}`, {
     variables: {
-      limit: 50,
+      limit: 1,
     },
   });
 

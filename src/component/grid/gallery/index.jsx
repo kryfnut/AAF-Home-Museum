@@ -39,11 +39,23 @@ export default function GridGallery({
             onClick={() => history.replace(`/grid/${prev}`)}
             className={prev ? 'go-prev' : 'go-prev-nope'}
           />
-          <div className="go-text" />
-          <div className="go-story" />
-          <div className={next ? 'go-next' : 'go-next-nope'} />
+          <div
+            onClick={() => history.goBack()}
+            className="go-text"
+          />
+          <div
+            onClick={() => history.replace('/story')}
+            className="go-story"
+          />
+          <div
+            onClick={() => history.replace(`/grid/${next}`)}
+            className={next ? 'go-next' : 'go-next-nope'}
+          />
           <div className="go-collection" />
-          <div className="go-home" />
+          <div
+            onClick={() => history.replace('/menu')}
+            className="go-home"
+          />
         </div>
       </div>
     </div>

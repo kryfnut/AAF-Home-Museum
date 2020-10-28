@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 import { useHistory } from 'react-router-dom';
 import { Context } from '../../../context/context';
+import InfiniteLoading from '../infinite-loading';
 import './index.scss';
 
 export default function StoryInfiniteList({
@@ -70,7 +71,18 @@ export default function StoryInfiniteList({
                     ))
                 }
           {
-                loading ? <div>loading....</div> : null
+                loading ? (
+                  <div style={{
+                    width: '100%',
+                    height: '20vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  >
+                    <InfiniteLoading />
+                  </div>
+                ) : null
             }
         </div>
       </div>
@@ -79,7 +91,7 @@ export default function StoryInfiniteList({
           TELL ME A STORY
         </div>
         <div className="story-search" />
-        <div className="story-back-to-home" onClick={() => history.goBack()} />
+        <div className="story-back-to-home" onClick={() => history.replace('/menu')} />
       </div>
     </div>
   );

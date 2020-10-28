@@ -16,7 +16,6 @@
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: capitalize;
-  text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
 .menu-icon {
@@ -32,7 +31,7 @@
 }
 
 .menu-item-top-container .menu-item:nth-of-type(1) {
-  color: #B4CBD8;
+  color: #000000;
   animation: 1s turnGreen forwards;
 }
 
@@ -41,17 +40,17 @@
 }
 
 .menu-item-top-container .menu-item:nth-of-type(2) {
-  color: #ffffff;
+  color: #000000;
   animation: 1s turnWhite forwards;
 }
 
 .menu-item-bottom-container .menu-item:nth-of-type(1) {
-  color: #CED8B3;
+  color: #000000;
   animation: 1s turnBlue forwards;
 }
 
 .menu-item-bottom-container .menu-item:nth-of-type(2) {
-  color: #E7CE9D;
+  color: #000000;
   animation: 1s turnOrange forwards;
 }
 

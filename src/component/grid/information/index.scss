@@ -79,19 +79,19 @@
   user-select: none;
 
   & .title {
-    font-size: 1.8vw;
-    font-weight: bold;
+    font-size: 35px;
+    font-weight: normal;
   }
 
   & .subtitle {
-    font-size: 1vw;
-    font-style: italic;
-    font-weight: normal;
+    font-size: 20px;
+    //font-style: italic;
+    font-weight: bold;
     padding-bottom: 5vh;
   }
 
   & .content {
-    font-size: 1vw;
+    font-size: 20px;
     line-height: 1.5;
     font-weight: normal;
   }

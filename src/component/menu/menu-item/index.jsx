@@ -27,9 +27,9 @@ export default function MenuItem({ title, icon, onClick, direction}) {
     }} className={clicked ? 'menu-item menu-item-clicked': 'menu-item'}>
       <span className={clicked ? 'menu-text menu-text-clicked' : 'menu-text'}>{title}</span>
       <img
-          style={{
-              ...style()
-          }}
+          // style={{
+          //     ...style()
+          // }}
           className={clicked ? 'menu-icon menu-icon-clicked' : 'menu-icon'} src={icon} alt={title} />
     </div>
   );

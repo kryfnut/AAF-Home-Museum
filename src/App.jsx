@@ -21,6 +21,7 @@ import Guide from './page/guide/guide';
 import Story from './page/story/story';
 import Grid from './page/grid/grid';
 import Wander from './page/wander/wander';
+import Error from './page/error/Error';
 
 Amplify.configure(awsconfig);
 
@@ -72,11 +73,8 @@ function App() {
                 <Route path="/grid-view">
                   <GridRouterSwitch />
                 </Route>
-                {/* todo 404 page */}
                 <Route>
-                  <div>
-                    404
-                  </div>
+                  <Error />
                 </Route>
               </Switch>
             </BrowserRouter>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import { getGridInfo } from '../../graphql/queries';
 import GridLoading from '../../component/grid/loading';
@@ -12,6 +12,7 @@ const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws
 
 export default function Grid() {
   const { id } = useParams();
+  const history = useHistory();
 
   const [context] = useContext(Context);
 
@@ -50,10 +51,7 @@ export default function Grid() {
   }
 
   if (error) {
-    // todo error handler
-    return (
-      <div>error...</div>
-    );
+    history.push('/404');
   }
 
   let {

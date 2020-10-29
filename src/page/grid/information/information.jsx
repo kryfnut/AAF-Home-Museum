@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 
@@ -10,6 +10,7 @@ import GridInformationComponent from '../../../component/grid/information';
 /* route for grid image view */
 export default function GridInformation() {
   const { id, url } = useParams();
+  const history = useHistory();
   const { loading, error, data } = useQuery(gql`${getBasic}`, {
     variables: {
       id,
@@ -23,9 +24,8 @@ export default function GridInformation() {
   // set body background
   document.body.style.backgroundColor = '#CED8B3';
 
-  // TODO error handler
   if (error) {
-    return <div>error</div>;
+    history.push('/404');
   }
 
   const { getBasic: information } = data;

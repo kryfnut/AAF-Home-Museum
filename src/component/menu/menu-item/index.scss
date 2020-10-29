@@ -4,7 +4,8 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-flow: column-reverse;
   transition: all .2s ease-in;
   background: #FFF59B;
   transform: perspective(600px) rotateX(0deg);
@@ -19,11 +20,12 @@
 }
 
 .menu-icon {
-  position: absolute;
-  right: 1vw;
-  bottom: 1vw;
+  //position: absolute;
+  //right: 1vw;
+  //bottom: 1vw;
   animation: showText 1.3s ease-in;
   transition: all .5s ease-in-out;
+  display: flex;
 }
 
 .menu-icon-clicked {
@@ -89,7 +91,7 @@
 
 @keyframes turnBlack {
   to {
-    background: #000000;
+    background: #A5A5A5;
   }
 }
 

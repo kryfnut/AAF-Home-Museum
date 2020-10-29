@@ -4,6 +4,7 @@ import { useQuery } from 'react-apollo-hooks';
 import { listBasics } from '../../graphql/queries';
 import GuideLoading from '../../component/guide/loading';
 import GuideContact from '../../component/guide/guide-contact';
+import {useHistory} from 'react-router-dom';
 
 export default function Guide() {
   const {
@@ -15,15 +16,14 @@ export default function Guide() {
       },
     });
 
+  const history = useHistory();
+
   if (loading) {
     return <GuideLoading />;
   }
 
   if (error) {
-    // todo error handler
-    return (
-      <div>error...</div>
-    );
+    history.push('/404');
   }
 
   const { listBasics: result } = data;

@@ -42,10 +42,7 @@ export default function Wander() {
   }
 
   if (error) {
-    // todo error handler
-    return (
-      <div>error...</div>
-    );
+    history.push('/404');
   }
 
   if (context) {

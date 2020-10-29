@@ -40,8 +40,12 @@ export default function GridGallery({
             className={prev ? 'go-prev' : 'go-prev-nope'}
           />
           <div
+              onClick={() => history.replace('/wander')}
+              className="go-wander"
+          />
+          <div
             onClick={() => history.goBack()}
-            className="go-text"
+            className="go-guide"
           />
           <div
             onClick={() => history.replace('/story')}

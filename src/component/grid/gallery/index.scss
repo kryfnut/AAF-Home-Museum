@@ -34,7 +34,7 @@
   }
 
   & .guide-tool {
-    width: 40%;
+    width: 60%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -82,11 +82,19 @@
   background-image: url("../../../asset/icon-next-nope.svg");
 }
 
-.go-text {
+.go-guide {
   width: 8vw;
   height: 10vh;
-  background: url("../../../asset/icon-go-text.svg") no-repeat center;
+  background: url("../../../asset/icon-menu-guide.svg") no-repeat center;
   background-size: 40%;
+  cursor: pointer;
+}
+
+.go-wander {
+  width: 8vw;
+  height: 10vh;
+  background: url("../../../asset/icon-double-eye-bolder.svg") no-repeat center;
+  background-size: 50%;
   cursor: pointer;
 }
 

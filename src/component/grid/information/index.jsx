@@ -13,8 +13,8 @@ export default function GridInformationComponent({
     <div className="grid-information-component-container">
       <div className="grid-information-main">
         <article className="information-article">
-          <h1 className="title">{title}</h1>
-          <p className="subtitle">{`${lastName} ${firstName}`}</p>
+          <h1 className="title">{`${lastName} ${firstName}`}</h1>
+          <p className="subtitle">{title}</p>
           <p className="content">
             {description}
           </p>

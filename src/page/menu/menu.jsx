@@ -8,7 +8,8 @@ import MenuSlogan from '../../component/menu/menu-slogan';
 import iconMenuCollection from '../../asset/icon-menu-collection.svg';
 import iconMenuGuide from '../../asset/icon-menu-guide.svg';
 import iconMenuStory from '../../asset/icon-menu-story.svg';
-import iconMenuWander from '../../asset/icon-menu-wander.svg';
+// import iconMenuWander from '../../asset/icon-menu-wander.svg';
+import iconMenuWander from '../../asset/icon-double-eye.svg';
 
 export default function Menu() {
   // eslint-disable-next-line no-unused-vars

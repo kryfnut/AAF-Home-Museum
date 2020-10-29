@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import gql from 'graphql-tag';
+import {useHistory} from 'react-router-dom';
 import { useQuery } from 'react-apollo-hooks';
 import { listImages } from '../../graphql/queries';
 import LauncherLoading from '../../component/launcher/loading';
@@ -15,6 +16,7 @@ export default function Launcher() {
       },
     });
 
+  const history = useHistory();
   const [interval, intervalSetter] = useState(undefined);
 
   const resetInterval = () => window.clearTimeout(interval);
@@ -29,10 +31,7 @@ export default function Launcher() {
   }
 
   if (error) {
-    // todo error handler
-    return (
-      <div>error...</div>
-    );
+    history.push('/404');
   }
 
   const { listImages: currentPageListImages } = data;

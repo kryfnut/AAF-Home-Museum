@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import propTypes from 'prop-types';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 import { useHistory } from 'react-router-dom';

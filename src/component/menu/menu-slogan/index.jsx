@@ -11,11 +11,14 @@ export default function MenuSlogan({ slogan, onClick }) {
       onClick={onClick}
       className="menu-slogan"
     >
-      <MarqueeText
-          text={slogan}
-          duration={8}
-          repeat={10}
-      />
+      {/*<MarqueeText*/}
+      {/*    text={slogan}*/}
+      {/*    duration={8}*/}
+      {/*    repeat={10}*/}
+      {/*/>*/}
+      {
+        "WELCOME TO HOME MUSEUM"
+      }
     </div>
   );
 }

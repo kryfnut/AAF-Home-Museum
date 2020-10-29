@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import gql from 'graphql-tag';
+import {useHistory} from 'react-router-dom';
 import { useQuery } from 'react-apollo-hooks';
 import { getStoryInfo } from '../../graphql/queries';
 import StoryInfiniteList from '../../component/story/infinite-list';
@@ -15,6 +16,7 @@ export default function Story() {
   });
 
   const [fetchMoreLoading, setFetchMoreLoading] = useState(false);
+  const history = useHistory();
 
   document.body.style.backgroundColor = '#ffffff';
 
@@ -22,9 +24,8 @@ export default function Story() {
     return <StoryLoading />;
   }
 
-  // TODO error handler
   if (error) {
-    return <div>{error.message}</div>;
+    history.push('/404');
   }
 
   const { listBasics: { items: stories, nextToken }, listImages: { items: images } } = data;

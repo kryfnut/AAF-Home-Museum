@@ -9,11 +9,11 @@ import GridInformationComponent from '../../../component/grid/information';
 
 /* route for grid image view */
 export default function GridInformation() {
-  const { id, url } = useParams();
+  const { id, url, gallery } = useParams();
   const history = useHistory();
   const { loading, error, data } = useQuery(gql`${getBasic}`, {
     variables: {
-      id,
+      id: id || gallery,
     },
   });
 
@@ -32,6 +32,6 @@ export default function GridInformation() {
 
   return (
   // eslint-disable-next-line react/jsx-props-no-spreading
-    <GridInformationComponent {...information} url={url} />
+    <GridInformationComponent gallery={gallery} {...information} url={url} />
   );
 }

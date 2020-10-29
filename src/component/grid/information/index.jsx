@@ -5,7 +5,7 @@ import { Context } from '../../../context/context';
 import './index.scss';
 
 export default function GridInformationComponent({
-  title, lastName, firstName, description, id, url,
+  title, lastName, firstName, description, id, url, gallery,
 }) {
   const history = useHistory();
 
@@ -21,7 +21,12 @@ export default function GridInformationComponent({
         </article>
         <div
           className="go-image"
-          onClick={() => history.replace(`/grid-view/image/${url}/${id}`)}
+          style={{
+            display: gallery ? 'none' : 'block',
+          }}
+          onClick={() => (!gallery
+            ? history.replace(`/grid-view/image/${url}/${id}`)
+            : history.goBack())}
         />
         <div onClick={() => history.goBack()} className="close-btn" />
       </div>

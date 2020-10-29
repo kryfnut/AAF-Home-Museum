@@ -36,12 +36,16 @@ export default function GridGallery({
         <div className="contact-name">{`${lastName} ${firstName}`}</div>
         <div className="guide-tool">
           <div
+            onClick={() => history.push(`/grid-view/more/${id}`)}
+            className="go-information"
+          />
+          <div
             onClick={() => history.replace(`/grid/${prev}`)}
             className={prev ? 'go-prev' : 'go-prev-nope'}
           />
           <div
-              onClick={() => history.replace('/wander')}
-              className="go-wander"
+            onClick={() => history.replace('/wander')}
+            className="go-wander"
           />
           <div
             onClick={() => history.goBack()}

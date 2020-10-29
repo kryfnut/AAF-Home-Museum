@@ -31,6 +31,9 @@ export default function GridRouterSwitch() {
             <Route path="/grid-view/information/:url/:id" exact>
               <GridInformation />
             </Route>
+            <Route exact path="/grid-view/more/:gallery">
+              <GridInformation />
+            </Route>
           </Switch>
         </animated.div>
       ))}

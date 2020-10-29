@@ -14,6 +14,7 @@ import client from './apollo-client';
 import awsconfig from './aws-exports';
 // Pages Routers
 import GridRouterSwitch from './component/common/grid-router-switch';
+import AboutRouterSwitch from "./component/common/about-router-switch";
 import Launcher from './page/launcher/launcher';
 import Homepage from './page/homepage/homepage';
 import Menu from './page/menu/menu';
@@ -33,7 +34,7 @@ function App() {
         fonts={[
           {
             font: 'B612',
-            weights: [400, 700],
+            weights: [400, 700, 'lighter'],
           },
         ]}
         subsets={['cyrillic-ext', 'greek']}
@@ -72,6 +73,9 @@ function App() {
                 </Route>
                 <Route path="/grid-view">
                   <GridRouterSwitch />
+                </Route>
+                <Route path="/about">
+                  <AboutRouterSwitch />
                 </Route>
                 <Route>
                   <Error />

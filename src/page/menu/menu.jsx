@@ -56,7 +56,12 @@ export default function Menu() {
             <MenuItem direction="bottom-left" onClick={() => handleClick('guide')} key={1} icon={iconMenuGuide} title="Guide Me By Name" />,
             <MenuItem direction="bottom-right" onClick={() => handleClick('collection')} key={4} icon={iconMenuCollection} title="My Collection" />,
           ]}
-          sloganComponent={<MenuSlogan slogan="&nbsp;About Home Museum About Home Museum&nbsp;" />}
+          sloganComponent={(
+            <MenuSlogan
+              onClick={() => history.push('/about/main')}
+              slogan="&nbsp;About Home Museum About Home Museum&nbsp;"
+            />
+)}
         />
       </div>
     </>

@@ -22,6 +22,7 @@
   height: 90vh;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   overflow-y: scroll;
   overflow-x: hidden;
 }

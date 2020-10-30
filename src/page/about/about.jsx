@@ -20,16 +20,25 @@ export default function About() {
       <div className="about-article-container">
         {
                   pages.map(({ title, author, page }) => (
-                    <div onClick={() => history.push(`/page/${page}`)} className="about-article">
+                    <div onClick={() => history.push(`/about/page/${page}`)} className="about-article">
                       <span className="title">{title}</span>
                       <span className="author">{author}</span>
                     </div>
                   ))
               }
+        <div className="about-main-footer">
+          <div onClick={() => history.push('bio')} className="biographies">Biographies</div>
+          <div onClick={() => history.push('colophon')} className="colophon">Colophon</div>
+          <div onClick={() => history.push('privacy')} className="privacy">Terms of Service & Privacy Policy</div>
+        </div>
       </div>
       <div className="about-footer">
-        <div className="about-footer-left">left</div>
-        <div className="about-footer-right">right</div>
+        <div className="about-footer-left">
+          <span className="about-main-title">LAGOSPHOTO20 RAPID RESPONSE RESTITUTION</span>
+        </div>
+        <div className="about-footer-right">
+          <div onClick={() => history.push('/menu')} className="back-to-home" />
+        </div>
       </div>
     </div>
   );

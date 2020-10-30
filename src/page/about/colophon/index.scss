@@ -1,0 +1,48 @@
+.about-colophon-container {
+  position: absolute;
+  overflow: hidden;
+  background: #E7CE9D;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  font-family: B612,sans-serif;
+  font-weight: lighter;
+  font-size: 1.5vw;
+}
+
+.text-container {
+  position: absolute;
+  line-height: 2;
+  top: 5vh;
+  left: 5vw;
+  right: 5vw;
+  bottom: 10vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.back-container {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icons-group {
+  margin-top: 20vh;
+  width: 90vw;
+  height: 10vh;
+  background: url("../../../asset/icons-group.svg") no-repeat center;
+  background-size: contain;
+}

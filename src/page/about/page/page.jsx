@@ -11,7 +11,7 @@ export default function AboutPage() {
   const current = pageList.find((i) => i.page === page);
 
   if (!current) {
-    history.replace('/404');
+    return history.replace('/404');
   }
 
   return (

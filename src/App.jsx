@@ -14,7 +14,7 @@ import client from './apollo-client';
 import awsconfig from './aws-exports';
 // Pages Routers
 import GridRouterSwitch from './component/common/grid-router-switch';
-import AboutRouterSwitch from "./component/common/about-router-switch";
+import AboutRouterSwitch from './component/common/about-router-switch';
 import Launcher from './page/launcher/launcher';
 import Homepage from './page/homepage/homepage';
 import Menu from './page/menu/menu';
@@ -76,6 +76,9 @@ function App() {
                 </Route>
                 <Route path="/about">
                   <AboutRouterSwitch />
+                </Route>
+                <Route path="/404">
+                  <Error />
                 </Route>
                 <Route>
                   <Error />

@@ -24,6 +24,11 @@ import Grid from './page/grid/grid';
 import Wander from './page/wander/wander';
 import Error from './page/error/Error';
 
+// TODO move all collection routes to a switch
+import Collection from './page/collection/collection';
+import EntranceNope from './page/collection/entrance-nope/entrance-nope';
+import Entrance from './page/collection/entrance/entrance';
+
 Amplify.configure(awsconfig);
 
 function App() {
@@ -71,6 +76,15 @@ function App() {
                 <Route exact path="/grid/:id">
                   <Grid />
                 </Route>
+                <Route exact path="/collection">
+                  <Collection />
+                </Route>
+                <Route exact path="/entrance-nope">
+                  <EntranceNope />
+                </Route>
+                <Route exact path="/entrance">
+                  <Entrance />
+                </Route>
                 <Route path="/grid-view">
                   <GridRouterSwitch />
                 </Route>
@@ -83,6 +97,7 @@ function App() {
                 <Route>
                   <Error />
                 </Route>
+
               </Switch>
             </BrowserRouter>
           </ApolloHooksProvider>

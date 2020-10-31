@@ -1,0 +1,32 @@
+.context-load-state {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 20vh;
+  left: 0;
+  text-align: center;
+  font-size: 1.3vw;
+  animation: ease-in .4s fade-in forwards;
+}
+
+.context-load-state-loaded {
+  animation: ease-in .4s 2s fade-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

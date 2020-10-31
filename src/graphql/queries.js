@@ -109,6 +109,22 @@ export const listDescriptions = /* GraphQL */ `
   }
 `;
 
+export const getCollection = `
+  query GetCollection($id: ID!) {
+    getCollection(id: $id) {
+      image {
+        id
+        url
+        width
+        height
+      }
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
 export const getGridInfo = /* GraphQL */ `
  query GetGridInfo(
     $filter: ModelImageFilterInput

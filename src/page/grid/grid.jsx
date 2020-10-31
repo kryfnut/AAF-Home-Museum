@@ -52,6 +52,7 @@ export default function Grid() {
 
   if (error) {
     history.push('/404');
+    return <GridLoading />;
   }
 
   let {

@@ -157,3 +157,16 @@ export const deleteDescription = /* GraphQL */ `
     }
   }
 `;
+
+export const createCollection = `
+  mutation CreateCollection(
+    $input: CreateCollectionInput!
+    $condition: ModelCollectionConditionInput
+  ) {
+    createCollection(input: $input, condition: $condition) {
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;

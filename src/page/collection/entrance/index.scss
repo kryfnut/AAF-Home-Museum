@@ -1,0 +1,94 @@
+.entrance-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  font-family: B612, sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.entrance-footer {
+  border-top: 1px solid #ffffff;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  background: #000000;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .title {
+    width: 40%;
+    height: 100%;
+    padding-left: 2vw;
+    display: flex;
+    font-size: 2vw;
+    line-height: 10vh;
+    color: #ffffff;
+  }
+
+  & .entrance-tool {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  & .go-home {
+    width: 8vw;
+    height: 10vh;
+    background: url("../../../asset/icon-go-home-light.png") no-repeat center;
+    background-size: 40%;
+    cursor: pointer;
+  }
+}
+
+.entrance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  place-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: #FFFFFF;
+  font-size: 2vw;
+}
+
+.input-group {
+  position: relative;
+}
+
+.entrance-input {
+  margin: 60px 20px;
+  width: 16vw;
+  height: 4vh;
+  border: 0;
+  padding: 0 10px;
+  background: #FFFFFF;
+  border-radius: 2vw;
+  outline: none;
+}
+
+.entrance-button {
+  height: 4vh;
+  width: 6vw;
+  border-radius: 2vw;
+  border: 0;
+  background: #FFFFFF;
+  outline: none;
+  cursor: pointer;
+}

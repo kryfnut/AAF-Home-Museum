@@ -26,6 +26,8 @@ export default function Menu() {
           return history.push('/story');
         case 'wander':
           return history.push('/wander');
+        case 'collection':
+          return history.push('/collection');
         default:
           return history.push('/404');
       }

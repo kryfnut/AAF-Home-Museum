@@ -24,6 +24,7 @@ export default function GridImage() {
 
   if (error) {
     history.push('/404');
+    return <GridLoading />;
   }
 
   return (

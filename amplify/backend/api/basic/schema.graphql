@@ -21,6 +21,18 @@ type Image @model {
   height: Int!
 }
 
+type Collection @model {
+  id: ID!
+  image: [ImageCollected]!
+}
+
+type ImageCollected {
+  id: String!,
+  url: String!,
+  width: Int!
+  height: Int!
+}
+
 type Description @model {
   id: ID!
   basicId: String!

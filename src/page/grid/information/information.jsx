@@ -26,6 +26,7 @@ export default function GridInformation() {
 
   if (error) {
     history.push('/404');
+    return <GridLoading />;
   }
 
   const { getBasic: information } = data;

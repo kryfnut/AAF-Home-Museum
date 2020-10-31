@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { useHistory } from 'react-router-dom';
 import './index.scss';
 import useImage from '../../../hooks/useImage';
 
 const calc = (x, y) => [0, 0, 1.01];
 const trans = (x, y, s) => `perspective(20px) scale(${s})`;
 
-export default function GridCard({
-  url, width, height, image, id, contact
+export default function CollectionCard({
+  url, width, height, id, name,
 }) {
   const { loading, error } = useImage(url);
   const [boxType, setBoxType] = useState(undefined);
-  const history = useHistory();
 
   useEffect(() => {
     if (width > height) setBoxType('horizontal');
@@ -26,7 +24,7 @@ export default function GridCard({
 
   if (loading) {
     return (
-      <div className={`grid-card-loading-${boxType}`}>
+      <div className={`collection-card-loading-${boxType}`}>
         <div className="lds-ellipsis">
           <div />
           <div />
@@ -37,19 +35,29 @@ export default function GridCard({
     );
   }
   if (error) {
-    return <div className={`grid-card-error-${boxType}`}>Ops... Error Happened!</div>;
+    return <div className={`collection-card-error-${boxType}`}>Ops... Error Happened!</div>;
   }
   return (
     <animated.div
-      className={`grid-card-${boxType}`}
-      onClick={() => history.push(`/grid-view/image/${encodeURIComponent(image)}/${id}`)}
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
+      className={`collection-card-${boxType}`}
+      // onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+      // onMouseLeave={() => set({ xys: [0, 0, 1] })}
       style={{
-        transform: props.xys.interpolate(trans),
+        // transform: props.xys.interpolate(trans),
         backgroundImage: `url('${url}')`,
-        cursor: 'pointer',
+        position: 'relative',
+        color: 'white',
       }}
-    />
+    >
+      <span style={{
+        position: 'absolute',
+        bottom: '-2.3vh',
+        right: '0',
+        fontSize: '12px',
+      }}
+      >
+        {name}
+      </span>
+    </animated.div>
   );
 }

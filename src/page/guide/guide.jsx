@@ -24,6 +24,7 @@ export default function Guide() {
 
   if (error) {
     history.push('/404');
+    return <GuideLoading />;
   }
 
   const { listBasics: result } = data;

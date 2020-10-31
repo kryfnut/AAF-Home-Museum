@@ -32,6 +32,7 @@ export default function Launcher() {
 
   if (error) {
     history.push('/404');
+    return <LauncherLoading />;
   }
 
   const { listImages: currentPageListImages } = data;

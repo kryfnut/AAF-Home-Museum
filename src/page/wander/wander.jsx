@@ -43,6 +43,7 @@ export default function Wander() {
 
   if (error) {
     history.push('/404');
+    return <WanderLoading />;
   }
 
   if (context) {

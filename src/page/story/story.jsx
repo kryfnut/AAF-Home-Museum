@@ -26,6 +26,7 @@ export default function Story() {
 
   if (error) {
     history.push('/404');
+    return <StoryLoading />;
   }
 
   const { listBasics: { items: stories, nextToken }, listImages: { items: images } } = data;

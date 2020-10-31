@@ -143,3 +143,9 @@
     animation: lds-ellipsis3 0.6s infinite;
   }
 }
+
+.hidden {
+  position: absolute;
+  top: 20000px;
+  left: 20000px;
+}

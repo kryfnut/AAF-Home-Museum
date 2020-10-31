@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 import Notifications, { notify } from 'react-notify-toast';
 import copy from 'clipboard-copy';
 import { useHistory } from 'react-router-dom';
 import { useMutation } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
+import { toBlob } from 'html-to-image';
+import download from 'downloadjs';
 import { createCollection } from '../../../graphql/mutations';
 import CollectionCard from '../card';
+import KonvaGenerator from '../../common/konva-generator';
 import './index.scss';
 
 export default function CollectionGallery({
   collection,
 }) {
   const history = useHistory();
+  const container = useRef(null);
+  const konva = useRef(null);
 
   const [create, { loading }] = useMutation(gql`${createCollection}`, {
     variables: {
@@ -42,16 +47,20 @@ export default function CollectionGallery({
               ID:
               {result.id}
             </p>
-          </div>));
+                       </div>));
         } else {
           notify.show('Ops...An Unexcepted Error Happened', 'error');
         }
       });
   };
 
+  const saveAsImage = () => {
+    download(konva.current.getDataURLContent(), 'home-museum-collection.png');
+  };
+
   return (
     <div className="collection-gallery-container">
-      <div className="collection-gallery">
+      <div ref={container} className="collection-gallery">
         {
                     collection
                       .map(
@@ -80,31 +89,39 @@ export default function CollectionGallery({
             className="save-and-get-key"
           >
             {
-              loading ? (
-                <div className="collection-save-loading">
-                  <div className="lds-ellipsis">
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                  </div>
-                </div>
-              ) : (
-                <div>
-                  Save & get your
-                  <br />
-                  personal Key
-                </div>
-              )
-            }
+                            loading ? (
+                              <div className="collection-save-loading">
+                                <div className="lds-ellipsis">
+                                  <div />
+                                  <div />
+                                  <div />
+                                  <div />
+                                </div>
+                              </div>
+                            ) : (
+                              <div>
+                                Save & get your
+                                <br />
+                                personal Key
+                              </div>
+                            )
+                        }
 
           </div>
-          <div className="export-pdf">Export as PDF</div>
+          <div
+            onClick={() => saveAsImage()}
+            className="export-pdf"
+          >
+            Export as PDF
+          </div>
           <div
             onClick={() => history.replace('/menu')}
             className="go-home"
           />
         </div>
+      </div>
+      <div className="hidden">
+        <KonvaGenerator ref={konva} collection={collection} />
       </div>
       <Notifications />
     </div>

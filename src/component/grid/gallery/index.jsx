@@ -48,7 +48,7 @@ export default function GridGallery({
             className="go-wander"
           />
           <div
-            onClick={() => history.goBack()}
+            onClick={() => history.replace('/guide')}
             className="go-guide"
           />
           <div
@@ -59,7 +59,10 @@ export default function GridGallery({
             onClick={() => history.replace(`/grid/${next}`)}
             className={next ? 'go-next' : 'go-next-nope'}
           />
-          <div className="go-collection" />
+          <div
+            onClick={() => history.push('/collection')}
+            className="go-collection"
+          />
           <div
             onClick={() => history.replace('/menu')}
             className="go-home"

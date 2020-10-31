@@ -5,7 +5,6 @@ import copy from 'clipboard-copy';
 import { useHistory } from 'react-router-dom';
 import { useMutation } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
-import { toBlob } from 'html-to-image';
 import download from 'downloadjs';
 import { createCollection } from '../../../graphql/mutations';
 import CollectionCard from '../card';

@@ -33,11 +33,9 @@ function AppUnsupported() {
         fontSize: '3vh',
       }}
       >
-        PLEASE
+        MOBILE DEVICE
         <br />
-        USE PC OR TABLET
-        <br />
-        TO TO EXPLORE HOME MUSEUM
+        IS NOT SUPPORTED
         <br />
         <br />
         THANKS

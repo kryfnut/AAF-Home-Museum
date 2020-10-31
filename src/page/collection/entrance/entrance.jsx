@@ -23,7 +23,15 @@ export default function Entrance() {
         </div>
         <div className="loading-state">
           {
-                  state && <ContextLoadState id={id} onLoad={() => setState(false)} />
+                  state && (
+                  <ContextLoadState
+                    id={id}
+                    onLoad={(loaded) => {
+                      setState(false);
+                      if (loaded) history.push('/collection');
+                    }}
+                  />
+                  )
               }
         </div>
       </div>

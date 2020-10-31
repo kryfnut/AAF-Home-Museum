@@ -8,6 +8,8 @@ import { Context } from '../../../../context/context';
 import { getCollection } from '../../../../graphql/queries';
 
 export default function ContextLoadState({ id, onLoad }) {
+  const [context, setContext] = useContext(Context);
+
   const { loading, data, error } = useQuery(gql`${getCollection}`, {
     variables: {
       id,
@@ -19,16 +21,20 @@ export default function ContextLoadState({ id, onLoad }) {
 
   const { getCollection: collection } = data;
 
-  if (!collection) {
-    setTimeout(() => {
-      onLoad();
-    }, 2500);
-  }
+  setTimeout(() => {
+    setContext({
+      ...context,
+      collection: [
+        ...collection.image,
+      ],
+    });
+    onLoad(!!collection);
+  }, 2500);
 
   return (
     <span className={`context-load-state ${data ? 'context-load-state-loaded' : ''}`}>
       {
-      collection ? 'please waiting...' : 'no such collection'
+      collection ? 'got your collection! just wait for a little moment' : 'no such collection'
   }
     </span>
   );

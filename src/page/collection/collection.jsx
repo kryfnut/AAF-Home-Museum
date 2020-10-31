@@ -37,20 +37,7 @@ export default function Collection() {
   const { collection } = context || {};
   const { listBasics: result } = data;
   const { items: contacts } = result;
-  let collected = [
-    {
-      id: 'a58ef804-05ba-48ca-a506-811e1a00f78c',
-      url: 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/a58ef804-05ba-48ca-a506-811e1a00f78c-1602264046827.13961.jpg',
-      width: 1440,
-      height: 1080,
-    },
-    {
-      id: 'a58ef804-05ba-48ca-a506-811e1a00f78c',
-      url: 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/a58ef804-05ba-48ca-a506-811e1a00f78c-1602264046828.02476.jpg',
-      width: 1080,
-      height: 1440,
-    },
-  ];
+  let collected = [];
 
   if (collection && collection.length) collected = collection;
   collected = collected.map((item) => ({

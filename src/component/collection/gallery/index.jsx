@@ -23,7 +23,7 @@ export default function CollectionGallery({
       input: {
         image: [
           ...collection.map((image) => ({
-            id: image.id,
+            basicId: image.basicId,
             url: image.url,
             width: image.width,
             height: image.height,
@@ -65,11 +65,11 @@ export default function CollectionGallery({
                       .map(
                         ({
                           // url is an https url, and image is the key in the bucket
-                          width, height, url, id, firstName, lastName,
-                        }) => (
+                          width, height, url, basicId, firstName, lastName,
+                        }) => console.log(url) || (
                           <CollectionCard
-                            id={id}
-                            key={url}
+                            id={basicId}
+                            key={basicId + url}
                             width={width}
                             height={height}
                             url={url}

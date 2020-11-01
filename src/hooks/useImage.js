@@ -10,6 +10,7 @@ export default function useImage(url) {
   useEffect(() => {
     const image = new Image();
     image.src = url;
+    image.crossOrigin = 'Anonymous';
     // eslint-disable-next-line func-names
     image.onload = function () {
       if (image.width > image.height) setBoxType('horizontal');

@@ -113,7 +113,7 @@ export const getCollection = `
   query GetCollection($id: ID!) {
     getCollection(id: $id) {
       image {
-        id
+        basicId
         url
         width
         height

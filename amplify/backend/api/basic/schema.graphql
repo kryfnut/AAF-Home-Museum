@@ -27,7 +27,7 @@ type Collection @model {
 }
 
 type ImageCollected {
-  id: String!,
+  basicId: String!,
   url: String!,
   width: Int!
   height: Int!

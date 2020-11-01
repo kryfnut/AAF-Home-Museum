@@ -42,7 +42,13 @@ export default function SpringAnimatedImage(
             key={key}
             style={{...props, width: `${width}px`, height: `${height}px`, position: 'absolute'}}
         >
-            <img className="launcher-image" src={url} width={width} height={height} alt=""/>
+            <img
+                crossOrigin="Anonymous"
+                className="launcher-image"
+                src={url}
+                width={width}
+                height={height}
+                alt=""/>
         </animated.div>
     )
 }

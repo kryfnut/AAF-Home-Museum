@@ -42,7 +42,7 @@ export default function Collection() {
   if (collection && collection.length) collected = collection;
   collected = collected.map((item) => ({
     ...item,
-    ...contacts.find((contact) => contact.id === item.id),
+    ...contacts.find((contact) => contact.id === item.basicId),
   }));
 
   // if not

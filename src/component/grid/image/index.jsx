@@ -6,7 +6,7 @@ import { Context } from '../../../context/context';
 import './index.scss';
 
 export default function GridImageComponent({
-  url, id, width, height, image
+  url, id, width, height, image,
 }) {
   const [isOpen, setOpen] = useState(false);
   const [context, setContext] = useContext(Context);
@@ -28,7 +28,7 @@ export default function GridImageComponent({
     collection: [
       ...collection,
       {
-        id, url, width, height,
+        basicId: id, url, width, height,
       },
     ],
   });
@@ -41,7 +41,7 @@ export default function GridImageComponent({
   // check if have collected
   const collected = collection && collection
     .find(
-      (picture) => picture.id === id && picture.url === url,
+      (picture) => picture.basicId === id && picture.url === url,
     );
 
   const images = [
@@ -57,6 +57,7 @@ export default function GridImageComponent({
     <div className="grid-image-component-container">
       <div className="grid-image-main">
         <img
+          crossOrigin="Anonymous"
           src={url}
           alt={id}
           onClick={() => setOpen(true)}

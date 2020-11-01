@@ -67,13 +67,13 @@ function KonvaGenerator({ collection, handle }, ref) {
                     }) => (
                       <>
                         <KonvaImage x={x} y={y} height={h} width={w} url={url} />
-                        <KonvaImage
-                          url={qr}
-                          x={width - 100 * dpr - padding * dpr}
-                          y={height - 100 * dpr * 1.2}
-                          width={100 * dpr}
-                          height={100 * dpr}
-                        />
+                        {/* <KonvaImage */}
+                        {/*  url={qr} */}
+                        {/*  x={width - 100 * dpr - padding * dpr} */}
+                        {/*  y={height - 100 * dpr * 1.2} */}
+                        {/*  width={100 * dpr} */}
+                        {/*  height={100 * dpr} */}
+                        {/* /> */}
                         <Text
                           text={`${lastName} ${firstName}`}
                           width={width}

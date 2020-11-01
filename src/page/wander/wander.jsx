@@ -76,6 +76,24 @@ export default function Wander() {
             ...context,
             wanderPageScrollTop: wanderContainer.current.scrollTop,
           }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`))}
+          renderImage={({
+            index, left, top, key, photo, margin,
+          }) => (
+            <img
+              {...photo}
+              style={{
+                left, top, margin, position: 'absolute',
+              }}
+              key={key}
+              onClick={
+                () => setContext({
+                  ...context,
+                  wanderPageScrollTop: wanderContainer.current.scrollTop,
+                }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
+              }
+              crossOrigin="Anonymous"
+            />
+          )}
         />
         <div onClick={() => history.goBack()} className="back-btn" />
       </div>

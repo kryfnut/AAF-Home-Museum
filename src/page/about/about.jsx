@@ -26,11 +26,29 @@ export default function About() {
                     </div>
                   ))
               }
-        <div className="about-main-footer">
-          <div onClick={() => history.push('bio')} className="biographies">Biographies</div>
-          <div onClick={() => history.push('colophon')} className="colophon">Colophon</div>
-          <div onClick={() => history.push('privacy')} className="privacy">Terms of Service & Privacy Policy</div>
+        <div onClick={() => history.push('bio')} className="about-article">
+          <span className="title">Biographies</span>
+          <span
+            className="author"
+          />
         </div>
+        <div onClick={() => history.push('colophon')} className="about-article">
+          <span className="title">Colophon</span>
+          <span
+            className="author"
+          />
+        </div>
+        <div onClick={() => history.push('privacy')} className="about-article">
+          <span className="title">Terms of Service & Privacy Policy</span>
+          <span
+            className="author"
+          />
+        </div>
+        {/* <div className="about-main-footer"> */}
+        {/*  <div onClick={() => history.push('bio')} className="biographies">Biographies</div> */}
+        {/*  <div onClick={() => history.push('colophon')} className="colophon">Colophon</div> */}
+        {/*  <div onClick={() => history.push('privacy')} className="privacy">Terms of Service & Privacy Policy</div> */}
+        {/* </div> */}
       </div>
       <div className="about-footer">
         <div className="about-footer-left">

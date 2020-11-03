@@ -99,9 +99,9 @@ export default function CollectionGallery({
                               </div>
                             ) : (
                               <div>
-                                Save & get your
+                                SAVE & GET YOUR
                                 <br />
-                                personal Key
+                                PERSONAL KEY
                               </div>
                             )
                         }
@@ -111,7 +111,7 @@ export default function CollectionGallery({
             onClick={() => saveAsImage()}
             className="export-pdf"
           >
-            Export as PDF
+            EXPORT AS JPG
           </div>
           <div
             onClick={() => history.replace('/menu')}

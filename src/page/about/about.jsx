@@ -38,12 +38,15 @@ export default function About() {
             className="author"
           />
         </div>
-        <div onClick={() => history.push('privacy')} className="about-article">
+        <div onClick={() => history.push('privacy')} className="about-article-bottom">
           <span className="title">Terms of Service & Privacy Policy</span>
           <span
             className="author"
           />
         </div>
+        <br/>
+        <br/>
+        <br/>
         {/* <div className="about-main-footer"> */}
         {/*  <div onClick={() => history.push('bio')} className="biographies">Biographies</div> */}
         {/*  <div onClick={() => history.push('colophon')} className="colophon">Colophon</div> */}
@@ -52,7 +55,7 @@ export default function About() {
       </div>
       <div className="about-footer">
         <div className="about-footer-left">
-          <span className="about-main-title">LAGOSPHOTO20 RAPID RESPONSE RESTITUTION</span>
+          <span className="about-main-title">WELCOME TO HOME MUSEUM</span>
         </div>
         <div className="about-footer-right">
           <div onClick={() => history.push('/menu')} className="back-to-home" />

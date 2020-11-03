@@ -21,7 +21,7 @@ export default function EntranceNope() {
             className="entrance-input"
             type="text"
           />
-          <button onClick={() => setState(true)} className="entrance-button">ok</button>
+          <button onClick={() => setState(true)} className="entrance-button">OK</button>
         </div>
         <div className="loading-state">
           {

@@ -15,9 +15,13 @@ export default function GridInformationComponent({
         <article className="information-article">
           <h1 className="title">{`${firstName} ${lastName}`}</h1>
           <p className="subtitle">{title}</p>
-          <p className="content">
-            {description}
-          </p>
+          {
+            description.split('\n').map((i) => (
+              <p className="content">
+                {i}
+              </p>
+            ))
+          }
         </article>
         <div
           className="go-image"

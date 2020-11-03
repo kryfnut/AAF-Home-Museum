@@ -19,7 +19,7 @@ export default function Entrance() {
             placeholder="Enter your personal Key"
             type="text"
           />
-          <button onClick={() => setState(true)} className="entrance-button">ok</button>
+          <button onClick={() => setState(true)} className="entrance-button">OK</button>
         </div>
         <div className="loading-state">
           {

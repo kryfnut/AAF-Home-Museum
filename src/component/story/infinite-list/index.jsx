@@ -12,11 +12,11 @@ export default function StoryInfiniteList({
   const history = useHistory();
   const [context, setContext] = useContext(Context);
 
-  const infiniteRef = useInfiniteScroll({
-    loading,
-    hasNextPage,
-    onLoadMore,
-  });
+  // const infiniteRef = useInfiniteScroll({
+  //   loading,
+  //   hasNextPage: false,
+  //   onLoadMore,
+  // });
 
   if (context) {
     const { storyPageScrollTop } = context;
@@ -32,23 +32,23 @@ export default function StoryInfiniteList({
       contacts: stories.map((_) => _.id),
     });
   }, [stories]);
-
-  useEffect(() => {
-    if (context && context.storyPageScrollTop && infiniteRef.current) {
-      infiniteRef.current.scrollTop = context.storyPageScrollTop;
-    }
-  }, []);
+  //
+  // useEffect(() => {
+  //   if (context && context.storyPageScrollTop && infiniteRef.current) {
+  //     infiniteRef.current.scrollTop = context.storyPageScrollTop;
+  //   }
+  // }, []);
 
   return (
     <div className="story-container">
       <div className="story-infinite-container">
-        <div ref={infiniteRef} className="story-infinite-list">
+        <div className="story-infinite-list">
           {
                     stories.map(({
                       firstName, lastName, title, description, id,
                     }) => (
                       <div className="story-item">
-                        <h1 className="story-author">{`${lastName} ${firstName}`}</h1>
+                        <h1 className="story-author">{`${firstName} ${lastName}`}</h1>
                         {
                               images.findIndex((item) => item.basicId === id) !== -1
                                 ? (
@@ -56,7 +56,7 @@ export default function StoryInfiniteList({
                                     onClick={() => {
                                       setContext({
                                         ...context,
-                                        storyPageScrollTop: infiniteRef.current.scrollTop,
+                                        // storyPageScrollTop: infiniteRef.current.scrollTop,
                                       });
                                       history.push(`/grid/${id}`);
                                     }}

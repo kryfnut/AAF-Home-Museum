@@ -75,7 +75,7 @@ function KonvaGenerator({ collection, handle }, ref) {
                         {/*  height={100 * dpr} */}
                         {/* /> */}
                         <Text
-                          text={`${lastName} ${firstName}`}
+                          text={`${firstName} ${lastName}`}
                           width={width}
                           fill="#ffffff"
                           height={20}

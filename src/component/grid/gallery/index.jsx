@@ -33,7 +33,7 @@ export default function GridGallery({
             }
       </div>
       <div className="guide-footer">
-        <div className="contact-name">{`${lastName} ${firstName}`}</div>
+        <div className="contact-name">{`${firstName} ${lastName}`}</div>
         <div className="guide-tool">
           <div
             onClick={() => history.push(`/grid-view/more/${id}`)}

@@ -73,7 +73,7 @@ export default function CollectionGallery({
                             width={width}
                             height={height}
                             url={url}
-                            name={`${lastName} ${firstName}`}
+                            name={`${firstName} ${lastName}`}
                           />
                         ),
                       )

@@ -26,18 +26,31 @@ export default function GuideContact({ contacts }) {
 
   contacts.forEach((contact) => {
     const { lastName } = contact;
-    if (charactersMap[lastName.substr(0, 1).toUpperCase()].length === 0) {
-      charactersMap[lastName.substr(0, 1).toUpperCase()]
-        .push(
-          {
-            ...contact,
-            character: lastName.substr(0, 1).toUpperCase(),
-          },
-        );
-    } else {
-      charactersMap[lastName.substr(0, 1).toUpperCase()].push(contact);
-    }
+    // if (charactersMap[lastName.substr(0, 1).toUpperCase()].length === 0) {
+    //   charactersMap[lastName.substr(0, 1).toUpperCase()]
+    //     .push(
+    //       {
+    //         ...contact,
+    //         character: lastName.substr(0, 1).toUpperCase(),
+    //       },
+    //     );
+    // } else {
+    charactersMap[lastName.substr(0, 1).toUpperCase()].push(contact);
+    // }
   });
+
+  Object.keys(charactersMap)
+    .forEach((key) => {
+      charactersMap[key] = charactersMap[key].sort((a, b) => a.firstName.localeCompare(b.firstName));
+    });
+
+  Object.keys(charactersMap)
+    .forEach((key) => {
+      charactersMap[key][0] = {
+        ...charactersMap[key][0],
+        character: charactersMap[key][0].lastName.substr(0, 1).toUpperCase(),
+      };
+    });
 
   const contactsForRender = Object.keys(charactersMap)
     .map((key) => [...charactersMap[key]])

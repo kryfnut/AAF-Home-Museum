@@ -8,7 +8,7 @@ import { Context } from '../../context/context';
 import WanderLoading from '../../component/wander/loading';
 import './index.scss';
 
-const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
+const IMAGE_URL_PREFIX = 'http://dvlta9st78f8e.cloudfront.net/public/';
 
 export default function Wander() {
   const {

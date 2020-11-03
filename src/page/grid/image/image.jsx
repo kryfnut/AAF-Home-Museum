@@ -4,7 +4,7 @@ import useImage from '../../../hooks/useImage';
 import GridLoading from '../../../component/grid/loading';
 import GridImageComponent from '../../../component/grid/image';
 
-const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
+const IMAGE_URL_PREFIX = 'http://dvlta9st78f8e.cloudfront.net/public/';
 
 /* route for grid image view */
 export default function GridImage() {

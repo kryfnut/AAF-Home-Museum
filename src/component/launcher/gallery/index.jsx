@@ -5,7 +5,7 @@ import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
 import LauncherLoading from '../loading';
 
-const IMAGE_URL_PREFIX = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/';
+const IMAGE_URL_PREFIX = 'http://dvlta9st78f8e.cloudfront.net/public/';
 const { innerHeight, innerWidth } = window;
 
 // 生成从minNum到maxNum的随机数

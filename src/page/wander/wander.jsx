@@ -84,6 +84,7 @@ export default function Wander() {
               style={{
                 left, top, margin, position: 'absolute',
               }}
+              loading="lazy"
               key={key}
               onClick={
                 () => setContext({

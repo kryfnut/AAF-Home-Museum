@@ -66,7 +66,11 @@ export default function StoryInfiniteList({
                                 : null
                           }
                         <p className="story-title">{title}</p>
-                        <p className="story-content">{description}</p>
+                        {
+                          description.split('\n').map((part) => (
+                            <p className="story-content">{part}</p>
+                          ))
+                        }
                       </div>
                     ))
                 }

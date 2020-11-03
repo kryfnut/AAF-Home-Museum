@@ -43,6 +43,7 @@ export default function SpringAnimatedImage(
             style={{...props, width: `${width}px`, height: `${height}px`, position: 'absolute'}}
         >
             <img
+                loading="lazy"
                 crossOrigin="Anonymous"
                 className="launcher-image"
                 src={url}

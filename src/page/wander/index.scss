@@ -1,7 +1,7 @@
 .wander-gallery-container {
   position: absolute;
   overflow-y: scroll;
-  background: #B4CBD8;
+  background: #000000;
   top: 0;
   left: 0;
   right: 0;
@@ -29,8 +29,8 @@
 }
 
 .back-btn {
-  width: 5vw;
-  height: 5vw;
+  //width: 5vw;
+  //height: 5vw;
   position: fixed;
   bottom: 5vw;
   left: 5vw;
@@ -39,7 +39,7 @@
   transition: all .2s ease-in-out;
 }
 
-.back-btn:hover {
+.back-btn {
   width: 8vw;
   height: 8vw;
   border-radius: 50%;

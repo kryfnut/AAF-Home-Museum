@@ -27,6 +27,7 @@ export default function MenuItem({ title, icon, onClick, direction}) {
     }} className={clicked ? 'menu-item menu-item-clicked': 'menu-item'}>
       <span className={clicked ? 'menu-text menu-text-clicked' : 'menu-text'}>{title}</span>
       <img
+          loading="lazy"
           crossOrigin="Anonymous"
           // style={{
           //     ...style()

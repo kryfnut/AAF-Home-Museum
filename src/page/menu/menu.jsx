@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import MenuContainer from '../../component/menu/menu-container';
 import MenuItem from '../../component/menu/menu-item';
 import MenuSlogan from '../../component/menu/menu-slogan';
-import iconMenuCollection from '../../asset/icon-menu-collection.svg';
+import iconMenuCollection from '../../asset/fxx.svg';
 import iconMenuGuide from '../../asset/icon-menu-guide.svg';
 import iconMenuStory from '../../asset/icon-menu-story.svg';
 // import iconMenuWander from '../../asset/icon-menu-wander.svg';

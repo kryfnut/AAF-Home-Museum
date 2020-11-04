@@ -68,34 +68,13 @@ function InformationEditDialog(props, ref) {
                 },
             }));
 
-            const imagesToCreate = photos.map(async ({key}) => {
-
-                const resolveWidthHeight = (url) => {
-                    return new Promise(resolve => {
-                        const img = new Image();
-                        img.src = 'https://homemuseumbucket112347-production.s3.amazonaws.com/public/' + url;
-                        img.onload = function () {
-                            console.log(img);
-                            resolve({width: img.width, height: img.height})
-                        }
-                        img.onerror = function (e) {
-                            console.log(e)
-                        }
-                    })
-                }
-
-                let {width, height} = await resolveWidthHeight(key);
-
-                await API.graphql(graphqlOperation(createImage, {
+            const imagesToCreate = photos.map(({key}) => API.graphql(graphqlOperation(createImage, {
                     input: {
                         basicId: state.id,
-                        url: key,
-                        width,
-                        height
+                        url: key
                     },
-                }));
-                }
-            )
+                })
+            ))
 
             Promise.all([
                 submit,

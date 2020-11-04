@@ -73,6 +73,8 @@ export const createImage = /* GraphQL */ `
       id
       basicId
       url
+      width
+      height
       createdAt
       updatedAt
     }

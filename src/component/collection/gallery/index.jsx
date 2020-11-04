@@ -111,7 +111,7 @@ export default function CollectionGallery({
             onClick={() => saveAsImage()}
             className="export-pdf"
           >
-            EXPORT AS JPG
+            EXPORT AS PNG
           </div>
           <div
             onClick={() => history.replace('/menu')}

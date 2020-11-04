@@ -3,17 +3,18 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import Gallery from 'react-photo-gallery';
 import { useHistory } from 'react-router-dom';
-import { listImages } from '../../graphql/queries';
+import Notifications, { notify } from 'react-notify-toast';
+import { getStoryInfo, listImages } from '../../graphql/queries';
 import { Context } from '../../context/context';
 import WanderLoading from '../../component/wander/loading';
 import './index.scss';
 
-const IMAGE_URL_PREFIX = 'http://dvlta9st78f8e.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'https://dvlta9st78f8e.cloudfront.net/public/';
 
 export default function Wander() {
   const {
     loading, data, error,
-  } = useQuery(gql`${listImages}`,
+  } = useQuery(gql`${getStoryInfo}`,
     {
       variables: {
         limit: 2000,
@@ -54,7 +55,7 @@ export default function Wander() {
     }
   }
 
-  const { listImages: { items: images } } = data;
+  const { listBasics: { items: stories }, listImages: { items: images } } = data;
 
   const photos = images.map(({
     url, width, height, basicId,
@@ -87,10 +88,21 @@ export default function Wander() {
               loading="lazy"
               key={key}
               onClick={
-                () => setContext({
-                  ...context,
-                  wanderPageScrollTop: wanderContainer.current.scrollTop,
-                }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
+                () => {
+                  const { lastName, firstName } = stories.find((i) => i.id === photo.id);
+                  notify.hide();
+                  notify.show(
+                    <div style={{ fontSize: '40px' }}>
+                      {firstName}
+                      {' '}
+                      {lastName}
+                    </div>,
+                  );
+                }
+                // () => setContext({
+                //   ...context,
+                //   wanderPageScrollTop: wanderContainer.current.scrollTop,
+                // }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
               }
               crossOrigin="Anonymous"
             />
@@ -98,6 +110,7 @@ export default function Wander() {
         />
         <div onClick={() => history.goBack()} className="back-btn" />
       </div>
+      <Notifications />
     </div>
   );
 }

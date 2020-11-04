@@ -79,7 +79,7 @@ function InformationEditDialog(props, ref) {
                             resolve({width: img.width, height: img.height})
                         }
                         img.onerror = function (e) {
-                            console.log(e)
+                            resolve({width: 0, height: 0})
                         }
                     })
                 }

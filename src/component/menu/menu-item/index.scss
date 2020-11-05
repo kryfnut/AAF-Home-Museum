@@ -4,7 +4,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-flow: column-reverse;
   transition: all .2s ease-in;
   background: #FFF59B;
@@ -17,6 +17,10 @@
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: capitalize;
+}
+
+.menu-text {
+  padding-top: 8vh;
 }
 
 .menu-icon {
@@ -52,7 +56,7 @@
 }
 
 .menu-item-bottom-container .menu-item:nth-of-type(2) {
-  color: #FFFFFF;
+  color: #000000;
   animation: 1s turnOrange forwards;
 }
 

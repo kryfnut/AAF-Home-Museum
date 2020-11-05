@@ -17,7 +17,7 @@ export default function MenuSlogan({ slogan, onClick }) {
       {/*    repeat={10}*/}
       {/*/>*/}
       {
-        "WELCOME TO HOME MUSEUM"
+        "Welcome To Home Museum"
       }
     </div>
   );

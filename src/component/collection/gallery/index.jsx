@@ -82,7 +82,7 @@ export default function CollectionGallery({
       <div className="collection-footer">
         <div className="title">MY COLLECTION</div>
         <div className="collection-tool">
-          <div onClick={() => history.push('/entrance')} className="enter-key">Enter your personal Key</div>
+          <div onClick={() => history.push('/entrance')} className="enter-key">ENtER YOUR PERSONAL KEY</div>
           <div
             onClick={() => createAndNotifyCollectionKey()}
             className="save-and-get-key"

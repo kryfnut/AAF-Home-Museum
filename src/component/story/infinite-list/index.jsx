@@ -94,7 +94,7 @@ export default function StoryInfiniteList({
         <div className="story-title">
           TELL ME A STORY
         </div>
-        <div className="story-search" />
+        {/*<div className="story-search" />*/}
         <div className="story-back-to-home" onClick={() => history.replace('/menu')} />
       </div>
     </div>

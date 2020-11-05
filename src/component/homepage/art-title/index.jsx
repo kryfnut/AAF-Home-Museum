@@ -32,7 +32,7 @@ function ArtTitle({ onJumpToMenu }) {
           return (
             <animated.div className="transitions-item" key={key} style={rest} onClick={onJumpToMenu}>
               <animated.div style={{ overflow: 'visible' }}>
-                LagosPhotos20
+                LagosPhoto20
               </animated.div>
             </animated.div>
           );

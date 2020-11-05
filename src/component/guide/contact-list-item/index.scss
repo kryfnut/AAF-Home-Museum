@@ -1,6 +1,6 @@
 .contact-list-item {
   position: relative;
-  min-height: 40px;
+  min-height: 0;
   width: 100%;
   padding: 0;
   line-height: 1.2vw;
@@ -10,6 +10,8 @@
   align-items: center;
   font-family: B612, sans-serif;
   cursor: pointer;
+  flex-shrink: 0;
+  margin-bottom: 1.2vh;
 
   & .character {
     position: absolute;

@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import MarqueeText from 'react-marquee-text-component';
 import GridCard from '../card';
 import './index.scss';
 
@@ -33,7 +34,13 @@ export default function GridGallery({
             }
       </div>
       <div className="guide-footer">
-        <div className="contact-name">{`${firstName} ${lastName}`}</div>
+        <div className="contact-name">
+          {
+          `${firstName} ${lastName}`.length > 20
+            ? <MarqueeText text={`${firstName} ${lastName}`} />
+            : `${firstName} ${lastName}`
+        }
+        </div>
         <div className="guide-tool">
           <div
             onClick={() => history.push(`/grid-view/more/${id}`)}

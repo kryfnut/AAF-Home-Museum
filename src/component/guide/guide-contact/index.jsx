@@ -26,31 +26,27 @@ export default function GuideContact({ contacts }) {
 
   contacts.forEach((contact) => {
     const { lastName } = contact;
-    // if (charactersMap[lastName.substr(0, 1).toUpperCase()].length === 0) {
-    //   charactersMap[lastName.substr(0, 1).toUpperCase()]
-    //     .push(
-    //       {
-    //         ...contact,
-    //         character: lastName.substr(0, 1).toUpperCase(),
-    //       },
-    //     );
-    // } else {
-    charactersMap[lastName.substr(0, 1).toUpperCase()].push(contact);
-    // }
+    if (charactersMap[lastName.substr(0, 1).toUpperCase()].length === 0) {
+      charactersMap[lastName.substr(0, 1).toUpperCase()]
+        .push(
+          {
+            ...contact,
+            // character: lastName.substr(0, 1).toUpperCase(),
+          },
+        );
+    } else {
+      charactersMap[lastName.substr(0, 1).toUpperCase()].push(contact);
+    }
   });
 
   Object.keys(charactersMap)
-    .forEach((key) => {
-      charactersMap[key] = charactersMap[key].sort((a, b) => a.firstName.localeCompare(b.firstName));
-    });
-
-  Object.keys(charactersMap)
-    .forEach((key) => {
-      charactersMap[key][0] = {
-        ...charactersMap[key][0],
-        character: charactersMap[key][0].lastName.substr(0, 1).toUpperCase(),
-      };
-    });
+      .forEach(key=> {
+        charactersMap[key] = charactersMap[key].sort((a, b) => a.lastName.localeCompare(b.lastName));
+        charactersMap[key][0] = {
+          ...charactersMap[key][0],
+          character: charactersMap[key][0].lastName.substr(0, 1).toUpperCase(),
+        }
+      })
 
   const contactsForRender = Object.keys(charactersMap)
     .map((key) => [...charactersMap[key]])
@@ -77,7 +73,7 @@ export default function GuideContact({ contacts }) {
     if (context && context.guidePageScrollTop && containerRef.current) {
       containerRef.current.scrollTop = context.guidePageScrollTop;
     }
-  }, [context]);
+  }, []);
 
   const handleClick = () => {
     setContext({
@@ -94,62 +90,62 @@ export default function GuideContact({ contacts }) {
       <div ref={containerRef} className="guide-contacts-container">
         <div key={1} className="guide-contact-list">
           {
-                    contactsForRender
-                      .slice(0, contactsForRender.length / 4)
-                      .map((contact) => (
-                        <ContactListItem
-                          onClick={handleClick}
-                          key={contact.id}
-                          contact={contact}
-                        />
-                      ))
-                }
+              contactsForRender
+                .slice(0, contactsForRender.length / 4)
+                .map((contact) => (
+                  <ContactListItem
+                    onClick={handleClick}
+                    key={contact.id}
+                    contact={contact}
+                  />
+                ))
+            }
         </div>
         <div key={2} className="guide-contact-list">
           {
-                    contactsForRender
-                      .slice(contactsForRender.length / 4, contactsForRender.length / 2)
-                      .map((contact) => (
-                        <ContactListItem
-                          onClick={handleClick}
-                          key={contact.id}
-                          contact={contact}
-                        />
-                      ))
-                }
+              contactsForRender
+                .slice(contactsForRender.length / 4, contactsForRender.length / 2)
+                .map((contact) => (
+                  <ContactListItem
+                    onClick={handleClick}
+                    key={contact.id}
+                    contact={contact}
+                  />
+                ))
+            }
         </div>
         <div key={3} className="guide-contact-list">
           {
-                    contactsForRender
-                    // eslint-disable-next-line no-mixed-operators
-                      .slice(contactsForRender.length / 2, contactsForRender.length / 4 * 3)
-                      .map((contact) => (
-                        <ContactListItem
-                          onClick={handleClick}
-                          key={contact.id}
-                          contact={contact}
-                        />
-                      ))
-                }
+              contactsForRender
+              // eslint-disable-next-line no-mixed-operators
+                .slice(contactsForRender.length / 2, contactsForRender.length / 4 * 3)
+                .map((contact) => (
+                  <ContactListItem
+                    onClick={handleClick}
+                    key={contact.id}
+                    contact={contact}
+                  />
+                ))
+            }
         </div>
         <div key={4} className="guide-contact-list">
           {
-                    contactsForRender
-                    // eslint-disable-next-line no-mixed-operators
-                      .slice(contactsForRender.length / 4 * 3, contactsForRender.length)
-                      .map((contact) => (
-                        <ContactListItem
-                          onClick={handleClick}
-                          key={contact.id}
-                          contact={contact}
-                        />
-                      ))
-                }
+              contactsForRender
+              // eslint-disable-next-line no-mixed-operators
+                .slice(contactsForRender.length / 4 * 3, contactsForRender.length)
+                .map((contact) => (
+                  <ContactListItem
+                    onClick={handleClick}
+                    key={contact.id}
+                    contact={contact}
+                  />
+                ))
+            }
         </div>
       </div>
       <div className="guide-line">
         <div className="guide-line-title">GUIDE ME BY NAME</div>
-        <div className="guide-search" />
+        {/* <div className="guide-search" /> */}
         <div className="guide-back-to-home" onClick={() => history.goBack()} />
       </div>
     </div>

@@ -13,7 +13,7 @@
 
 .launcher-image {
   animation: 1s 6.5s image ease-in forwards;
-  will-change: auto;
+  will-change: top, left;
 }
 
 @keyframes image {

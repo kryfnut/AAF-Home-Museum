@@ -80,67 +80,34 @@ export default function Wander({ hide }) {
           renderImage={({
             index, left, top, key, photo, margin,
           }) => (
-            hide
-              ? (
-                <img
-                  {...photo}
-                  style={{
-                    left, top, margin, position: 'absolute',
-                  }}
-                  loading="lazy"
-                  key={key}
-                  onTouchStart={
-                        () => {
-                          const { lastName, firstName } = stories.find((i) => i.id === photo.id);
-                          notify.hide();
-                          notify.show(
-                            <div style={{ fontSize: '30px', fontFamily: 'B612' }}>
-                              {firstName}
-                              {' '}
-                              {lastName}
-                            </div>,
-                            null,
-                            10000,
-                          );
-                        }
-                        // () => setContext({
-                        //   ...context,
-                        //   wanderPageScrollTop: wanderContainer.current.scrollTop,
-                        // }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
-                      }
-                  crossOrigin="Anonymous"
-                />
-              )
-              : (
-                <img
-                  {...photo}
-                  style={{
-                    left, top, margin, position: 'absolute',
-                  }}
-                  loading="lazy"
-                  key={key}
-                  onClick={
-                        () => {
-                          const { lastName, firstName } = stories.find((i) => i.id === photo.id);
-                          notify.hide();
-                          notify.show(
-                            <div style={{ fontSize: '30px', fontFamily: 'B612' }}>
-                              {firstName}
-                              {' '}
-                              {lastName}
-                            </div>,
-                            null,
-                            10000,
-                          );
-                        }
-                        // () => setContext({
-                        //   ...context,
-                        //   wanderPageScrollTop: wanderContainer.current.scrollTop,
-                        // }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
-                      }
-                  crossOrigin="Anonymous"
-                />
-              )
+            <img
+              {...photo}
+              style={{
+                left, top, margin, position: 'absolute',
+              }}
+              loading="lazy"
+              key={key}
+              onClick={
+                () => {
+                  const { lastName, firstName } = stories.find((i) => i.id === photo.id);
+                  notify.hide();
+                  notify.show(
+                    <div style={{ fontSize: '30px', fontFamily: 'B612' }}>
+                      {firstName}
+                      {' '}
+                      {lastName}
+                    </div>,
+                    null,
+                    10000,
+                  );
+                }
+                // () => setContext({
+                //   ...context,
+                //   wanderPageScrollTop: wanderContainer.current.scrollTop,
+                // }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
+              }
+              crossOrigin="Anonymous"
+            />
           )}
         />
         <div style={{ display: hide ? 'none' : 'initial' }} onClick={() => history.goBack()} className="back-btn" />

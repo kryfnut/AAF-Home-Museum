@@ -19,10 +19,10 @@ export default function GridGallery({
                   .map(
                     ({
                       // url is an https url, and image is the key in the bucket
-                      width, height, url, image,
+                      width, height, url, image, id: imageId,
                     }) => (
                       <GridCard
-                        id={id}
+                        id={imageId}
                         image={image}
                         key={url}
                         width={width}

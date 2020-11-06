@@ -63,7 +63,8 @@ export default function Grid() {
     getBasic: contact,
   } = data;
 
-  images = images.map(({ url, width, height }) => ({
+  images = images.map(({ url, width, height, id }) => ({
+    id,
     url: `${IMAGE_URL_PREFIX}${encodeURIComponent(url)}`,
     image: url,
     width,

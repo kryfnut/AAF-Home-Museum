@@ -111,6 +111,28 @@ export default function Wander({ hide }) {
           )}
         />
         <div style={{ display: hide ? 'none' : 'initial' }} onClick={() => history.goBack()} className="back-btn" />
+        <div
+          style={{
+            display: hide ? 'initial' : 'none',
+            position: 'fixed',
+            bottom: '2vh',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '80vw',
+            height: '4vh',
+            fontSize: '2vh',
+            textAlign: 'center',
+            background: '#ffffff',
+            fontFamily: 'B612',
+          }}
+          className="gallery-mobile"
+        >
+          Welcome To Home Museum
+          {' '}
+          <br />
+          {' '}
+          Please Use PC To Explore More
+        </div>
       </div>
       <Notifications />
     </div>

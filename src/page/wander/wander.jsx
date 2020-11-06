@@ -11,7 +11,7 @@ import './index.scss';
 
 const IMAGE_URL_PREFIX = 'https://dvlta9st78f8e.cloudfront.net/public/';
 
-export default function Wander() {
+export default function Wander({ hide }) {
   const {
     loading, data, error,
   } = useQuery(gql`${getStoryInfo}`,
@@ -110,7 +110,7 @@ export default function Wander() {
             />
           )}
         />
-        <div onClick={() => history.goBack()} className="back-btn" />
+        <div style={{ display: hide ? 'none' : 'initial' }} onClick={() => history.goBack()} className="back-btn" />
       </div>
       <Notifications />
     </div>

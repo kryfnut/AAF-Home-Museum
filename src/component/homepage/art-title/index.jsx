@@ -52,11 +52,11 @@ function ArtTitle({ onJumpToMenu }) {
         return (
           <animated.div className="transitions-item" key={key} style={rest} onClick={onJumpToMenu}>
             <animated.div style={{ overflow: 'visible' }}>
-              HOME
+              Home
               <br />
               <br />
               {' '}
-              MUSEUM
+              Museum
             </animated.div>
           </animated.div>
         );

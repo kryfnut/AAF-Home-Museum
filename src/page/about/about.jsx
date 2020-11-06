@@ -3,13 +3,17 @@ import { useHistory } from 'react-router-dom';
 import './index.scss';
 
 const pages = [
+  { title: 'From Rapid Response Restitution to Home Museum', author: 'Clémentine Deliss & Azu Nwagbogu', page: 5 },
+  { title: 'Towards Co-Creating a Decolonial, Inclusive Museum', author: 'Oluwatoyin Sogbesan', page: 2 },
   { title: 'A Museum of Hospitality', author: 'Asya Yaghmurian', page: 1 },
-  { title: 'Towards Co-creating a Decolonial Inclusive Museum', author: 'Oluwatoyin Sogbesan', page: 2 },
-  { title: 'What is an object virtue?', author: 'Joana Atemengue Owona / Birds of Knowledge', page: 3 },
-  { title: 'Birds of Knowledge', author: '', page: 4 },
-  { title: 'From Rapid Response Restitution to Home Museum', author: 'Clémentine Deliss & Azu Nwagbogu', page: 5 },
-  { title: 'NCMM Statement of Participation', author: '', page: 6 },
-  { title: 'Link for About Lagos Photo Festival', author: '', page: 7 },
+  { title: 'Developing a Counter-Model', author: 'Birds of Knowledge', page: 4 },
+  { title: 'Objects of Virtue', author: 'Joana Atemengue Owona / Birds of Knowledge', page: 3 },
+  { title: 'Letter to a Friend', author: 'Open Calls LagosPhoto20', page: 8 },
+  { title: 'Statement from the Director of NCMM', author: '', page: 6 },
+];
+
+const pageNext = [
+  { title: 'LagosPhoto Festival', author: '', page: 7 },
 ];
 
 export default function About() {
@@ -20,10 +24,18 @@ export default function About() {
       <div className="about-article-container">
         {
                   pages.map(({ title, author, page }) => (
-                    <div onClick={() => history.push(`/about/page/${page}`)} className="about-article">
-                      <span className="title">{title}</span>
-                      <span className="author">{author}</span>
-                    </div>
+                    page !== 7
+                      ? (
+                        <div onClick={() => history.push(`/about/page/${page}`)} className="about-article">
+                          <span className="title">{title}</span>
+                          <span className="author">{author}</span>
+                        </div>
+                      ) : (
+                        <div onClick={() => window.open('https://www.lagosphotofestival.com')} className="about-article">
+                          <span className="title">{title}</span>
+                          <span className="author">{author}</span>
+                        </div>
+                      )
                   ))
               }
         <div onClick={() => history.push('bio')} className="about-article">
@@ -32,6 +44,22 @@ export default function About() {
             className="author"
           />
         </div>
+        {
+          pageNext.map(({ title, author, page }) => (
+            page !== 7
+              ? (
+                <div onClick={() => history.push(`/about/page/${page}`)} className="about-article">
+                  <span className="title">{title}</span>
+                  <span className="author">{author}</span>
+                </div>
+              ) : (
+                <div onClick={() => window.open('https://www.lagosphotofestival.com')} className="about-article">
+                  <span className="title">{title}</span>
+                  <span className="author">{author}</span>
+                </div>
+              )
+          ))
+        }
         <div onClick={() => history.push('colophon')} className="about-article">
           <span className="title">Colophon</span>
           <span

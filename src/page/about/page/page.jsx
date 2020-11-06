@@ -2,6 +2,8 @@ import React from 'react';
 import './index.scss';
 import { useHistory, useParams } from 'react-router-dom';
 import pages from './pages.json';
+import png1 from '../../../asset/1.png';
+import png2 from '../../../asset/2.png';
 
 export default function AboutPage() {
   const history = useHistory();
@@ -19,8 +21,24 @@ export default function AboutPage() {
       <div className="about-page-article-container">
         <div className="article">
           {
-            current.content
-          }
+                        page === '7'
+                          ? <a href={current.content}>{current.content}</a>
+                          : current.content
+                            .split('\n')
+                            .map((paragraph) => (
+                              <p>{paragraph}</p>
+                            ))
+                    }
+          {
+                        page === '6'
+                          ? (
+                            <div style={{ width: '100%', textAlign: 'center' }}>
+                              <img src={png1} alt="" />
+                              <img src={png2} alt="" />
+                            </div>
+                          )
+                          : null
+                    }
         </div>
         <div className="about-page-footer">
           <div className="about-page-footer-left">

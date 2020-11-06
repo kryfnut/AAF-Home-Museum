@@ -3,13 +3,13 @@ import { useHistory } from 'react-router-dom';
 import './index.scss';
 
 const pages = [
-  { title: 'From Rapid Response Restitution To Home Museum', author: 'Dr. Clémentine Deliss, Azu Nwagbogu', page: 1 },
-  { title: 'Towards Co-Creating a Decolonial, Inclusive Museum', author: 'Dr. Oluwatoyin Sogbesan', page: 2 },
-  { title: 'Reviving Collective Memories', author: 'Dr. Clémentine Deliss, Azu Nwagbogu', page: 3 },
-  { title: 'Developing a Counter-Model', author: 'Birds of Knowledge', page: 4 },
-  { title: 'Objects of Virtue', author: 'Joana Atemengue Owona / Birds of Knowledge', page: 5 },
-  { title: 'Letter To A Friend', author: 'Open call in all languages', page: 6 },
-  { title: 'Statement From The Director of NCMM', author: '', page: 7 },
+  { title: 'A Museum of Hospitality', author: 'Asya Yaghmurian', page: 1 },
+  { title: 'Towards Co-creating a Decolonial Inclusive Museum', author: 'Oluwatoyin Sogbesan', page: 2 },
+  { title: 'What is an object virtue?', author: 'Joana Atemengue Owona / Birds of Knowledge', page: 3 },
+  { title: 'Birds of Knowledge', author: '', page: 4 },
+  { title: 'From Rapid Response Restitution to Home Museum', author: 'Clémentine Deliss & Azu Nwagbogu', page: 5 },
+  { title: 'NCMM Statement of Participation', author: '', page: 6 },
+  { title: 'Link for About Lagos Photo Festival', author: '', page: 7 },
 ];
 
 export default function About() {
@@ -44,9 +44,9 @@ export default function About() {
             className="author"
           />
         </div>
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
         {/* <div className="about-main-footer"> */}
         {/*  <div onClick={() => history.push('bio')} className="biographies">Biographies</div> */}
         {/*  <div onClick={() => history.push('colophon')} className="colophon">Colophon</div> */}

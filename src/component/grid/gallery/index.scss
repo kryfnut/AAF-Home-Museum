@@ -25,12 +25,13 @@
   align-items: center;
 
   & .contact-name {
-    width: 40%;
+    width: 38%;
     height: 100%;
     padding-left: 2vw;
     display: flex;
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 10vh;
+    flex-shrink: 0;
   }
 
   & .guide-tool {
@@ -38,6 +39,7 @@
     height: 100%;
     display: flex;
     justify-content: flex-start;
+    flex: 0;
   }
 }
 

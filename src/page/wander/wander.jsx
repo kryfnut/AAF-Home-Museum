@@ -92,7 +92,7 @@ export default function Wander() {
                   const { lastName, firstName } = stories.find((i) => i.id === photo.id);
                   notify.hide();
                   notify.show(
-                    <div style={{ fontSize: '30px' }}>
+                    <div style={{ fontSize: '30px', fontFamily: 'B612' }}>
                       {firstName}
                       {' '}
                       {lastName}

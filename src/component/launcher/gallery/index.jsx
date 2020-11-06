@@ -72,7 +72,7 @@ export default function LauncherGallery({
     // eslint-disable-next-line no-mixed-operators
       .then(() => setCurrentInterval() || load(true))
       .catch(() => resetInterval() || load(false));
-  }, [images, resetInterval, setCurrentInterval]);
+  }, [images]);
 
   if (!loaded) {
     return (

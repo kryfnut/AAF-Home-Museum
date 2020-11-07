@@ -30,23 +30,27 @@
 }
 
 .about-article {
-  width: 100%;
+  width: 96%;
   height: 13vh;
   border-bottom: solid 1px black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  padding-left: 2%;
+  padding-right: 2%;
   transition: all .2s ease-in-out;
 }
 
 .about-article-bottom {
-  width: 100%;
+  width: 96%;
   height: 13vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  padding-left: 2%;
+  padding-right: 2%;
   transition: all .2s ease-in-out;
 }
 
@@ -99,7 +103,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 2vw;
 
   & .back-to-home {
     width: 10vh;
@@ -107,6 +110,7 @@
     background: url("../../asset/icon-go-home.png") no-repeat center;
     background-size: 60%;
     cursor: pointer;
+    margin-right: .5vw;
   }
 }
 

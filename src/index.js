@@ -26,15 +26,9 @@ function OS() {
 
 const os = OS();
 
-const date = new Date('Sat Nov 08 2020 00:00:00 GMT+0800 (中国标准时间)').getTime();
-
-if (Date.now() >= date) {
-  if (!os.isPhone && !os.isAndroid) {
-    // eslint-disable-next-line react/jsx-filename-extension
-    ReactDOM.render(<App />, document.getElementById('root'));
-  } else {
-    ReactDOM.render(<AppUnsupported />, document.getElementById('root'));
-  }
+if (!os.isPhone && !os.isAndroid) {
+  // eslint-disable-next-line react/jsx-filename-extension
+  ReactDOM.render(<App />, document.getElementById('root'));
 } else {
-  ReactDOM.render((<div />), document.getElementById('root'));
+  ReactDOM.render(<AppUnsupported />, document.getElementById('root'));
 }

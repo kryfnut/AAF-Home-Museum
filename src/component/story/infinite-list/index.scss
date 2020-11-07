@@ -20,7 +20,7 @@
     left: 0;
     bottom: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     & .story-title {
@@ -40,11 +40,13 @@
     }
 
     & .story-back-to-home {
-      width: 5%;
-      height: 60%;
+      position: absolute;
+      height: 10vh;
+      width: 8vw;
       cursor: pointer;
       background: url("../../../asset/icon-go-home.png") no-repeat center;
-      background-size: contain;
+      background-size: 40%;
+      right: .2vw;
     }
   }
 }

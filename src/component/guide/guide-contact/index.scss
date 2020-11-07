@@ -43,7 +43,7 @@
   left: 0;
   bottom: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -63,11 +63,13 @@
 }
 
 .guide-back-to-home {
-  width: 8vw;
+  position: absolute;
   height: 10vh;
+  width: 8vw;
+  cursor: pointer;
   background: url("../../../asset/icon-go-home.png") no-repeat center;
   background-size: 40%;
-  cursor: pointer;
+  right: .2vw;
 }
 
 .guide-contacts .contact-line:nth-child(1) {

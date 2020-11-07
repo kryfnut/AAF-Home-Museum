@@ -37,7 +37,14 @@ export default function GridGallery({
         <div className="contact-name">
           {
           `${firstName} ${lastName}`.length > 20
-            ? <MarqueeText text={`${firstName} ${lastName} `} />
+            ? (
+              <marquee>
+                {firstName}
+                {' '}
+                {lastName}
+                {' '}
+              </marquee>
+            )
             : `${firstName} ${lastName}`
         }
         </div>

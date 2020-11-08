@@ -5,7 +5,7 @@ import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
 import LauncherLoading from '../loading';
 
-const IMAGE_URL_PREFIX = 'https://dvlta9st78f8e.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
 const { innerHeight, innerWidth } = window;
 
 // 生成从minNum到maxNum的随机数
@@ -63,14 +63,11 @@ export default function LauncherGallery({
 
   useEffect(() => {
     Promise.all(images.map((image) => new Promise((resolve, reject) => {
-      setTimeout(()=> {
-        resolve();
-      }, 1000)
-      // const img = new Image();
-      // img.crossOrigin = 'anonymous';
-      // img.src = IMAGE_URL_PREFIX + image.url;
-      // img.onload = () => resolve() && resetInterval();
-      // img.onerror = (e) => reject(e);
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.src = IMAGE_URL_PREFIX + image.url;
+      img.onload = () => resolve() && resetInterval();
+      img.onerror = (e) => reject(e);
     })))
     // eslint-disable-next-line no-mixed-operators
       .then(() => setCurrentInterval() || load(true))

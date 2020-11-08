@@ -9,7 +9,7 @@ import { Context } from '../../context/context';
 import WanderLoading from '../../component/wander/loading';
 import './index.scss';
 
-const IMAGE_URL_PREFIX = 'https://dvlta9st78f8e.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
 
 export default function Wander({ hide }) {
   const {
@@ -81,7 +81,7 @@ export default function Wander({ hide }) {
             index, left, top, key, photo, margin,
           }) => (
             <img
-              crossOrigin="anonymous"
+              crossOrigin="Anonymous"
               {...photo}
               style={{
                 left, top, margin, position: 'absolute',

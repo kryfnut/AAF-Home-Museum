@@ -4,7 +4,7 @@ import useImage from '../../../hooks/useImage';
 import GridLoading from '../../../component/grid/loading';
 import GridImageComponent from '../../../component/grid/image';
 
-const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'http://d22t9saas65g7w.cloudfront.net/';
 
 /* route for grid image view */
 export default function GridImage() {

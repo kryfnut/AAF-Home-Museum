@@ -63,11 +63,14 @@ export default function LauncherGallery({
 
   useEffect(() => {
     Promise.all(images.map((image) => new Promise((resolve, reject) => {
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.src = IMAGE_URL_PREFIX + image.url;
-      img.onload = () => resolve() && resetInterval();
-      img.onerror = (e) => reject(e);
+      setTimeout(()=> {
+        resolve();
+      }, 1000)
+      // const img = new Image();
+      // img.crossOrigin = 'anonymous';
+      // img.src = IMAGE_URL_PREFIX + image.url;
+      // img.onload = () => resolve() && resetInterval();
+      // img.onerror = (e) => reject(e);
     })))
     // eslint-disable-next-line no-mixed-operators
       .then(() => setCurrentInterval() || load(true))

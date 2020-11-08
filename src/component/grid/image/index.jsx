@@ -58,7 +58,7 @@ export default function GridImageComponent({
       <div className="grid-image-main">
         <img
           loading="lazy"
-          crossOrigin="Anonymous"
+          crossOrigin="anonymous"
           src={url}
           alt={id}
           onClick={() => setOpen(true)}

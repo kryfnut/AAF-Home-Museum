@@ -10,7 +10,7 @@ import qr from '../../../asset/qr-code.png';
 const KonvaImage = ({
   url, width, height, x, y,
 }) => {
-  const [image] = useImage(url, 'Anonymous');
+  const [image] = useImage(url, 'anonymous');
   return <Image width={width} height={height} x={x} y={y} image={image} />;
 };
 

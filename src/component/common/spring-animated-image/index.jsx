@@ -47,7 +47,7 @@ export default function SpringAnimatedImage(
         >
             <img
                 loading="lazy"
-                crossOrigin="Anonymous"
+                crossOrigin="anonymous"
                 className="launcher-image"
                 src={url}
                 width={width}

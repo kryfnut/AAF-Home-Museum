@@ -9,7 +9,7 @@ export default function useImage(url) {
 
   useEffect(() => {
     const image = new Image();
-    image.crossOrigin = 'Anonymous';
+    image.crossOrigin = 'anonymous';
     image.src = url;
     // eslint-disable-next-line func-names
     image.onload = function () {

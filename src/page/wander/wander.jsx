@@ -81,7 +81,7 @@ export default function Wander({ hide }) {
             index, left, top, key, photo, margin,
           }) => (
             <img
-              crossOrigin="Anonymous"
+              crossOrigin="anonymous"
               {...photo}
               style={{
                 left, top, margin, position: 'absolute',

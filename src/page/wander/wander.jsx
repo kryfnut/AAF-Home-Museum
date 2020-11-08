@@ -86,7 +86,6 @@ export default function Wander({ hide }) {
               style={{
                 left, top, margin, position: 'absolute',
               }}
-              loading="lazy"
               key={key}
               onClick={
                 () => {

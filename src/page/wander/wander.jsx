@@ -9,7 +9,7 @@ import { Context } from '../../context/context';
 import WanderLoading from '../../component/wander/loading';
 import './index.scss';
 
-const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'http://d22t9saas65g7w.cloudfront.net/';
 
 export default function Wander({ hide }) {
   const {

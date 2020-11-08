@@ -5,7 +5,7 @@ import SpringAnimatedImage from '../../common/spring-animated-image';
 import './index.scss';
 import LauncherLoading from '../loading';
 
-const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'http://d22t9saas65g7w.cloudfront.net/';
 const { innerHeight, innerWidth } = window;
 
 // 生成从minNum到maxNum的随机数

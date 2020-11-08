@@ -81,6 +81,7 @@ export default function Wander({ hide }) {
             index, left, top, key, photo, margin,
           }) => (
             <img
+              crossOrigin="Anonymous"
               {...photo}
               style={{
                 left, top, margin, position: 'absolute',
@@ -106,7 +107,6 @@ export default function Wander({ hide }) {
                 //   wanderPageScrollTop: wanderContainer.current.scrollTop,
                 // }) || history.push(`/grid-view/image/${photo.url}/${photo.id}`)
               }
-              crossOrigin="Anonymous"
             />
           )}
         />

@@ -64,7 +64,7 @@ export default function LauncherGallery({
   useEffect(() => {
     Promise.all(images.map((image) => new Promise((resolve, reject) => {
       const img = new Image();
-      img.crossOrigin = 'anonymous';
+      img.crossOrigin = 'Anonymous';
       img.src = IMAGE_URL_PREFIX + image.url;
       img.onload = () => resolve() && resetInterval();
       img.onerror = (e) => reject(e);

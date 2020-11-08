@@ -41,11 +41,11 @@ export default function AboutColophon() {
         <br />
         <p className="bold">SUPPORT</p>
         <p>Open Society Initiative for West Africa (OSIWA)</p>
-        <p>Alliance Française, Mike Adenuga Centre, Lagos</p>
         <p>Ford Foundation</p>
         <p>Goethe-Institut, Lagos</p>
+        <p>Alliance Française, Mike Adenuga Centre, Lagos</p>
+        <p>Arts of the Working Class</p>
         <p>Picter</p>
-        <br />
         <p>Nigerian Commission of Museums and Monuments (NCMM)</p>
         <p>
           LagosPhoto20 and Home Museum have been developed in collaboration with the Nigerian Commission of

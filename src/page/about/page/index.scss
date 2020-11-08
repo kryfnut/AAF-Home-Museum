@@ -21,8 +21,8 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  font-size: 1.8vw;
-  line-height: 1.8vw;
+  line-height: 1.5;
+  font-size: 1.5vw;
   flex-flow: column;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -33,7 +33,7 @@
   & .article {
     width: 90%;
     height: 90%;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     line-height: 2;
   }
 }
@@ -53,7 +53,7 @@
 .about-page-footer-left {
   width: 80%;
   height: 10vh;
-  font-size: 2vw;
+  font-size: 2.5vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -67,14 +67,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 2vw;
 
   & .back-to-home {
-    width: 10vh;
+    position: absolute;
+    width: 8vw;
     height: 10vh;
     background: url("../../../asset/icon-go-home.png") no-repeat center;
-    background-size: 60%;
+    background-size: 40%;
     cursor: pointer;
+    right: .2vw;
   }
 }
 

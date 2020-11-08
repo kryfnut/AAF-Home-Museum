@@ -29,7 +29,7 @@
     height: 100%;
     padding-left: 2vw;
     display: flex;
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 10vh;
     color: #ffffff;
   }
@@ -42,6 +42,7 @@
   }
 
   & .go-home {
+    position: absolute;
     width: 8vw;
     height: 10vh;
     background: url("../../../asset/icon-go-home-light.png") no-repeat center;
@@ -65,7 +66,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   color: #FFFFFF;
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 
 .input-group {

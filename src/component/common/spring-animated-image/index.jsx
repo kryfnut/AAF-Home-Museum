@@ -17,19 +17,22 @@ export default function SpringAnimatedImage(
 ) {
 
     const from = {
-        left: startX,
-        top: startY,
+        left: 0,
+        top: 0,
         opacity: 0,
+        transform: `translate(${ startX }px, ${startY}px)`
     };
     const enter = {
-        left: endX,
-        top: endY,
+        left: 0,
+        top: 0,
         opacity: 1,
+        transform: `translate(${ endX }px, ${endY}px)`
     };
     const leave = {
-        left: endX,
-        top: endY,
+        left: 0,
+        top: 0,
         opacity: 0,
+        transform: `translate(${ endX }px, ${endY}px)`
     };
 
     const config = {duration};
@@ -43,8 +46,7 @@ export default function SpringAnimatedImage(
             style={{...props, width: `${width}px`, height: `${height}px`, position: 'absolute'}}
         >
             <img
-                loading="lazy"
-                crossOrigin="Anonymous"
+                crossOrigin="anonymous"
                 className="launcher-image"
                 src={url}
                 width={width}

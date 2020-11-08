@@ -1,12 +1,38 @@
 // React Module
-import React from 'react';
-
+import React, { useState } from 'react';
+// Amazon Module
+import Amplify from 'aws-amplify';
 // Third Part Import
+import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import GoogleFontLoader from 'react-google-font-loader';
 
 import { Context } from './context/context';
+// Apollo Client Customized
+import client from './apollo-client';
+import awsconfig from './aws-exports';
+// Pages Routers
+import GridRouterSwitch from './component/common/grid-router-switch';
+import AboutRouterSwitch from './component/common/about-router-switch';
+import Launcher from './page/launcher/launcher';
+import Homepage from './page/homepage/homepage';
+import Menu from './page/menu/menu';
+import Guide from './page/guide/guide';
+import Story from './page/story/story';
+import Grid from './page/grid/grid';
+import Wander from './page/wander/wander';
+import Error from './page/error/Error';
 
-function AppUnsupported() {
+// TODO move all collection routes to a switch
+import Collection from './page/collection/collection';
+import EntranceNope from './page/collection/entrance-nope/entrance-nope';
+import Entrance from './page/collection/entrance/entrance';
+
+Amplify.configure(awsconfig);
+
+function App() {
+  const [context, setContext] = useState(null);
   return (
     <>
       <GoogleFontLoader
@@ -18,30 +44,22 @@ function AppUnsupported() {
         ]}
         subsets={['cyrillic-ext', 'greek']}
       />
-      <div style={{
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        padding: '40px',
-        background: 'radial-gradient(88.77% 88.77% at 50% 50%, rgba(255, 225, 225, 0.69) 0%, rgba(206, 216, 179, 0.69) 42.71%, rgba(180, 203, 216, 0.69) 65.56%, rgba(255, 240, 200, 0) 100%)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: 'B612',
-        fontSize: '3vh',
-      }}
-      >
-        MOBILE DEVICE
-        <br />
-        IS NOT SUPPORTED
-        <br />
-        <br />
-        THANKS
-      </div>
+      <Context.Provider value={[context, setContext]}>
+        <ApolloProvider client={client}>
+          <ApolloHooksProvider client={client}>
+            <BrowserRouter>
+              <Switch>
+                {/* Launcher: Pics Gallery */}
+                <Route exact path="/">
+                  <Wander hide={true} />
+                </Route>
+              </Switch>
+            </BrowserRouter>
+          </ApolloHooksProvider>
+        </ApolloProvider>
+      </Context.Provider>
     </>
   );
 }
 
-export default AppUnsupported;
+export default App;

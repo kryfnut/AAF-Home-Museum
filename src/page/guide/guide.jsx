@@ -1,10 +1,10 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
+import { useHistory } from 'react-router-dom';
 import { listBasics } from '../../graphql/queries';
 import GuideLoading from '../../component/guide/loading';
 import GuideContact from '../../component/guide/guide-contact';
-import {useHistory} from 'react-router-dom';
 
 export default function Guide() {
   const {

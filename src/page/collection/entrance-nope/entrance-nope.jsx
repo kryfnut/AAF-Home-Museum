@@ -11,7 +11,7 @@ export default function EntranceNope() {
   return (
     <div className="entrance-container">
       <div className="entrance">
-        <p>You have not added Photographs to your collection.</p>
+        <p>You have not added Photographs to your Collection.</p>
         <br />
         <p>If you already created a Collection, enter your Personal Key to open it.</p>
         <div className="input-group">

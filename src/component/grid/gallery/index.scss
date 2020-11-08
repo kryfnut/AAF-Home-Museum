@@ -21,23 +21,25 @@
   left: 0;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   & .contact-name {
-    width: 40%;
+    width: 38%;
     height: 100%;
     padding-left: 2vw;
     display: flex;
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 10vh;
+    flex-shrink: 0;
   }
 
   & .guide-tool {
-    width: 60%;
+    width: 52%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
+    flex-shrink: 0;
   }
 }
 
@@ -115,11 +117,13 @@
 }
 
 .go-home {
+  position: absolute;
   width: 8vw;
   height: 10vh;
   background: url("../../../asset/icon-go-home.png") no-repeat center;
   background-size: 40%;
   cursor: pointer;
+  right: .2vw;
 }
 
 .go-story {

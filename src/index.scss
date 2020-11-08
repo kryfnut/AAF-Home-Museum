@@ -47,3 +47,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html::-webkit-scrollbar, body::-webkit-scrollbar, div::-webkit-scrollbar, span::-webkit-scrollbar, applet::-webkit-scrollbar, object::-webkit-scrollbar, iframe,
+h1::-webkit-scrollbar, h2::-webkit-scrollbar, h3::-webkit-scrollbar, h4::-webkit-scrollbar, h5::-webkit-scrollbar, h6::-webkit-scrollbar, p::-webkit-scrollbar, blockquote::-webkit-scrollbar, pre,
+a::-webkit-scrollbar, abbr::-webkit-scrollbar, acronym::-webkit-scrollbar, address::-webkit-scrollbar, big::-webkit-scrollbar, cite::-webkit-scrollbar, code,
+del::-webkit-scrollbar, dfn::-webkit-scrollbar, em::-webkit-scrollbar, img::-webkit-scrollbar, ins::-webkit-scrollbar, kbd::-webkit-scrollbar, q::-webkit-scrollbar, s::-webkit-scrollbar, samp,
+small::-webkit-scrollbar, strike::-webkit-scrollbar, strong::-webkit-scrollbar, sub::-webkit-scrollbar, sup::-webkit-scrollbar, tt::-webkit-scrollbar, var,
+b::-webkit-scrollbar, u::-webkit-scrollbar, i::-webkit-scrollbar, center,
+dl::-webkit-scrollbar, dt::-webkit-scrollbar, dd::-webkit-scrollbar, ol::-webkit-scrollbar, ul::-webkit-scrollbar, li,
+fieldset::-webkit-scrollbar, form::-webkit-scrollbar, label::-webkit-scrollbar, legend,
+table::-webkit-scrollbar, caption::-webkit-scrollbar, tbody::-webkit-scrollbar, tfoot::-webkit-scrollbar, thead::-webkit-scrollbar, tr::-webkit-scrollbar, th::-webkit-scrollbar, td,
+article::-webkit-scrollbar, aside::-webkit-scrollbar, canvas::-webkit-scrollbar, details::-webkit-scrollbar, embed,
+figure::-webkit-scrollbar, figcaption::-webkit-scrollbar, footer::-webkit-scrollbar, header::-webkit-scrollbar, hgroup,
+menu::-webkit-scrollbar, nav::-webkit-scrollbar, output::-webkit-scrollbar, ruby::-webkit-scrollbar, section::-webkit-scrollbar, summary,
+time::-webkit-scrollbar, mark::-webkit-scrollbar, audio::-webkit-scrollbar, video::-webkit-scrollbar {
+  width: 0 !important
+}

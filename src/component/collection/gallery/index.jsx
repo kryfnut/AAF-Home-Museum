@@ -114,6 +114,10 @@ export default function CollectionGallery({
             EXPORT AS PNG
           </div>
           <div
+              // onClick={() => history.replace('/menu')}
+              className="go-home-mock"
+          />
+          <div
             onClick={() => history.replace('/menu')}
             className="go-home"
           />

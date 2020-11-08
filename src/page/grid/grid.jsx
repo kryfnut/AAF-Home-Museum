@@ -8,7 +8,7 @@ import GridLoading from '../../component/grid/loading';
 import { Context } from '../../context/context';
 import GridGallery from '../../component/grid/gallery';
 
-const IMAGE_URL_PREFIX = 'https://dvlta9st78f8e.cloudfront.net/public/';
+const IMAGE_URL_PREFIX = 'https://d1b3ku11cc4fbu.cloudfront.net/public/';
 
 export default function Grid() {
   const { id } = useParams();

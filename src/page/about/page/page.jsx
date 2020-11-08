@@ -3,7 +3,7 @@ import './index.scss';
 import { useHistory, useParams } from 'react-router-dom';
 import pages from './pages.json';
 import png1 from '../../../asset/1.png';
-import png2 from '../../../asset/2.png';
+import png2 from '../../../asset/2.jpg';
 import cn from '../../../asset/lang/cn.png';
 import en from '../../../asset/lang/en.png';
 import fr from '../../../asset/lang/fr.png';

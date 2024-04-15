@@ -1,13 +1,13 @@
 import React, {useState, useCallback} from 'react';
 import useListPhotoGallery from "../api-hook/useListPhotoGallery";
-import {CircularProgress, Grid} from "@material-ui/core";
-import {ErrorOutlineTwoTone} from "@material-ui/icons";
+import {CircularProgress, Grid} from "@mui/material";
+import {ErrorOutlineTwoTone} from "@mui/icons-material";
 import Gallery from "react-photo-gallery";
 
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const FixedGrid = function (props) {

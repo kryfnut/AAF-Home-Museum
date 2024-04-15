@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import useListPhotoKeys from "../api-hook/useListPhotoKeys";
-import {CircularProgress} from "@material-ui/core";
-import {ErrorOutlineTwoTone} from "@material-ui/icons";
-import Chip from '@material-ui/core/Chip';
-import Grid from '@material-ui/core/Grid';
-import Divider from "@material-ui/core/Divider";
-import Avatar from '@material-ui/core/Avatar';
+import {CircularProgress} from "@mui/material";
+import {ErrorOutlineTwoTone} from "@mui/icons-material";
+import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
+import Divider from "@mui/material/Divider";
+import Avatar from '@mui/material/Avatar';
 
 import Uploader from "./Uploader";
 

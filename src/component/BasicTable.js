@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
-import {Grid, CircularProgress} from "@material-ui/core";
-import {ErrorOutlineTwoTone} from "@material-ui/icons";
+import {Grid, CircularProgress} from "@mui/material";
+import {ErrorOutlineTwoTone} from "@mui/icons-material";
 import MaterialTable from 'material-table';
 
 import InformationEditDialog from "./InformationEditDialog";

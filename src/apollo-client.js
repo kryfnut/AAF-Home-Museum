@@ -3,7 +3,7 @@ import {createSubscriptionHandshakeLink} from 'aws-appsync-subscription-link';
 
 import {ApolloLink} from 'apollo-link';
 import {createHttpLink} from 'apollo-link-http';
-import ApolloClient from '@apollo/client';
+import {ApolloClient} from '@apollo/client';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 
 import appSyncConfig from "./aws-exports";

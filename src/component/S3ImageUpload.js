@@ -1,5 +1,7 @@
 import React from "react";
 import {Storage} from 'aws-amplify';
+import { StorageManager } from 'aws-amplify/ui-react-Storage'
+// import { Storage } from "aws-amplify/storage";
 
 export default class S3ImageUpload extends React.Component {
 
@@ -24,7 +26,7 @@ export default class S3ImageUpload extends React.Component {
 
         let uploadQueue = fileList.map(async file => {
             try {
-                const result = await Storage.put(`${id}-${this.index++}`, file, {
+                const result = await StorageManager.put(`${id}-${this.index++}`, file, {
                     contentType: 'image/jpeg'
                 });
                 this.list = [

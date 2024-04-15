@@ -1,5 +1,5 @@
 import React from 'react';
-import Amplify from 'aws-amplify';
+import {Amplify} from 'aws-amplify';
 import {ApolloProvider} from 'react-apollo';
 import {ApolloProvider as ApolloHooksProvider} from "react-apollo-hooks";
 import client from './apollo-client';

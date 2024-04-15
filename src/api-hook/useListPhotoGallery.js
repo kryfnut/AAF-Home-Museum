@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react';
 import {listImages} from "../graphql/queries";
 
-import {API, graphqlOperation} from 'aws-amplify'
+import {API, graphqlOperation} from 'aws-amplify';
+import {generateClient} from 'aws-amplify/api';
 
+const client = generateClient();
 
 export default function useListPhotoKeys() {
 
@@ -12,9 +14,9 @@ export default function useListPhotoKeys() {
 
     const fetchResponse = async () => {
         try {
-            return await API.graphql(graphqlOperation(listImages, {
+            return await client.graphql(listImages, {
                 limit: 10000,
-            }));
+            });
         } catch (err) {
             throw new Error(err.message);
         }

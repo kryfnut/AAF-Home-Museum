@@ -18,9 +18,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Slide from '@mui/material/Slide';
 
 import PhotoManager from "./PhotoManager";
-import {API, graphqlOperation} from "aws-amplify";
+import {generateClient} from 'aws-amplify/api';
+
 import {updateBasic, createImage} from "../graphql/mutations";
 
+
+const client = generateClient();
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,13 +63,13 @@ function InformationEditDialog(props, ref) {
 
     const handleSave = () => {
         try {
-            const submit = API.graphql(graphqlOperation(updateBasic, {
+            const submit = client.graphql(updateBasic, {
                 input: {
                     id: state.id,
                     title: state.title,
                     description: state.description
                 },
-            }));
+            });
 
             const imagesToCreate = photos.map(async ({key}) => {
 
@@ -86,14 +89,14 @@ function InformationEditDialog(props, ref) {
 
                 let {width, height} = await resolveWidthHeight(key);
 
-                await API.graphql(graphqlOperation(createImage, {
+                await client.graphql(createImage, {
                     input: {
                         basicId: state.id,
                         url: key,
                         width,
                         height
                     },
-                }));
+                });
                 }
             )
 

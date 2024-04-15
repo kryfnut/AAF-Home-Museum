@@ -1,7 +1,9 @@
 import {useEffect, useState} from 'react';
 import {listBasics} from "../graphql/queries";
 
-import {API, graphqlOperation} from 'aws-amplify'
+import {generateClient} from 'aws-amplify/api';
+
+const client = generateClient();
 
 
 export default function useListTable() {
@@ -12,7 +14,7 @@ export default function useListTable() {
 
   const fetchResponse = async () => {
     try {
-      return await API.graphql(graphqlOperation(listBasics, {limit: 300}));
+      return await client.graphql(listBasics, {limit: 300});
     } catch (err) {
       throw new Error(err.message);
     }

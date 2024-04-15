@@ -35,6 +35,15 @@
     "categories": {
       "auth": {
         "homemuseum352fda01": {}
+      },
+      "api": {
+        "basic": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      },
+      "storage": {
+        "museum": {}
       }
     }
   }

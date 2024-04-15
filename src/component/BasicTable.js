@@ -6,7 +6,6 @@ import MaterialTable from 'material-table';
 import InformationEditDialog from "./InformationEditDialog";
 
 import useListTable from "../api-hook/useListTable";
-import {API, graphqlOperation} from "aws-amplify";
 import {listImages} from "../graphql/queries";
 
 const FixedGrid = function (props) {

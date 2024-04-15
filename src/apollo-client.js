@@ -8,6 +8,8 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 
 import appSyncConfig from "./aws-exports";
 
+Amplify.configure(awsconfig);
+
 const url = appSyncConfig.aws_appsync_graphqlEndpoint;
 const region = appSyncConfig.aws_appsync_region;
 const auth = {

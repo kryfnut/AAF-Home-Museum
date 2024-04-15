@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import {Storage} from 'aws-amplify';
-// import { Storage } from 'aws-amplify/storage';
-import { StorageManager } from 'aws-amplify/ui-react-Storage'
+import Amplify, { Storage } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
-
+//Amplify.configure(awsconfig);
 
 export default function Uploader({onSuccess, id, index}) {
     const [uploading, setUploadState] = useState(false);
@@ -20,7 +19,7 @@ export default function Uploader({onSuccess, id, index}) {
             console.log(file);
             try {
                 console.log(Date.now() + Math.random() * Math.random() + file.name)
-                const result = await StorageManager.put(`${id}-${Date.now() + Math.random() * Math.random() + file.name}`, file, {
+                const result = await Storage.put(`${id}-${Date.now() + Math.random() * Math.random() + file.name}`, file, {
                     contentType: 'image/jpeg'
                 });
                 list = [

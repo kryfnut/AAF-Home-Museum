@@ -16,6 +16,7 @@
     "aws-appsync-auth-link": "^2.0.3",
     "aws-appsync-subscription-link": "^2.2.1",
     "graphql": "^15.3.0",
+    "graphql-retain-transformer": "^2.0.0",
     "graphql-tag": "^2.11.0",
     "material-table": "^1.69.1",
     "react": "^16.13.1",

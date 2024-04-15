@@ -1,5 +1,5 @@
 # people's basic information
-type Basic @model @retain {
+type Basic @model {
   cityResidence: String
   contact: String!
   countryResidence: [Country]!
@@ -13,13 +13,13 @@ type Basic @model @retain {
   images: [String]
 }
 
-type Image @model @retain {
+type Image @model {
   id: ID!
   basicId: String!
   url: String!
 }
 
-type Description @model @retain {
+type Description @model {
   id: ID!
   basicId: String!
   value: String!

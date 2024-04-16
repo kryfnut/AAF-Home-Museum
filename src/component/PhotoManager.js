@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Uploader from "./Uploader";
 
 import "../assets/s3-image.css";
-import {S3Image} from '@aws-amplify/ui-react';
+import {AmplifyS3Image} from '@aws-amplify/ui-react';
 
 const FixedGrid = function (props) {
     return (
@@ -55,12 +55,12 @@ export default function PhotoManager({id, onSuccess}, ref) {
             </div>
             <div style={{width: '80vw', minHeight: '100px', paddingTop: '10px'}}>
                 {
-                    data.map(({url}) => (<S3Image key={url} imgKey={url}/>))
+                    data.map(({url}) => (<AmplifyS3Image key={url} imgKey={url}/>))
                 }
             </div>
             <div style={{width: '80vw', minHeight: '100px'}}>
                 {
-                    currentPhotos.map(({key}) => (<S3Image key={key} imgKey={key}/>))
+                    currentPhotos.map(({key}) => (<AmplifyS3Image key={key} imgKey={key}/>))
                 }
             </div>
             <div>

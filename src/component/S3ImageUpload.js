@@ -1,8 +1,9 @@
 import React from "react";
-import Amplify, { Storage } from 'aws-amplify';
-import awsconfig from './aws-exports';
+//import Amplify, { Storage } from 'aws-amplify';
+import { uploadData } from "@aws-amplify/storage";
+//import awsconfig from './aws-exports';
 
-Amplify.configure(awsconfig);
+//Amplify.configure(awsconfig);
 
 export default class S3ImageUpload extends React.Component {
 
@@ -27,7 +28,7 @@ export default class S3ImageUpload extends React.Component {
 
         let uploadQueue = fileList.map(async file => {
             try {
-                const result = await Storage.put(`${id}-${this.index++}`, file, {
+                const result = await uploadData(`${id}-${this.index++}`, file, {
                     contentType: 'image/jpeg'
                 });
                 this.list = [

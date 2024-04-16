@@ -8,7 +8,7 @@ import awsconfig from './aws-exports';
 import Dashboard from "./page/Dashboard";
 import {BrowserRouter as Router} from "react-router-dom";
 
-//Amplify.configure(awsconfig);
+Amplify.configure(awsconfig);
 
 function App() {
     return (

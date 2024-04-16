@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Amplify, { Storage } from 'aws-amplify';
-import awsconfig from './aws-exports';
+//import Amplify, { Storage } from 'aws-amplify';
+//import awsconfig from './aws-exports';
+import { uploadData } from "@aws-amplify/storage";
 
 //Amplify.configure(awsconfig);
 
@@ -19,7 +20,7 @@ export default function Uploader({onSuccess, id, index}) {
             console.log(file);
             try {
                 console.log(Date.now() + Math.random() * Math.random() + file.name)
-                const result = await Storage.put(`${id}-${Date.now() + Math.random() * Math.random() + file.name}`, file, {
+                const result = await uploadData (`${id}-${Date.now() + Math.random() * Math.random() + file.name}`, file, {
                     contentType: 'image/jpeg'
                 });
                 list = [

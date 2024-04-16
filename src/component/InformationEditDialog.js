@@ -1,7 +1,7 @@
 //'use client'
 
 import React, {useImperativeHandle} from 'react';
-import {makeStyles} from '@mui/material/styles';
+import {ThemeProvider, makeStyles} from '@mui/styles'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import Grid from "@mui/material/Grid";

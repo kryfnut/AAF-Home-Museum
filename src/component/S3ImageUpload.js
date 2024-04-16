@@ -1,9 +1,5 @@
 import React from "react";
-//import Amplify, { Storage } from 'aws-amplify';
 import { uploadData } from "@aws-amplify/storage";
-//import awsconfig from './aws-exports';
-
-//Amplify.configure(awsconfig);
 
 export default class S3ImageUpload extends React.Component {
 

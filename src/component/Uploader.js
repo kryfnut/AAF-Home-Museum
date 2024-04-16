@@ -1,9 +1,7 @@
-import React, {useState} from "react";
-//import Amplify, { Storage } from 'aws-amplify';
-//import awsconfig from './aws-exports';
-import { uploadData } from "@aws-amplify/storage";
+//'use client'
 
-//Amplify.configure(awsconfig);
+import React, {useState} from "react";
+import { uploadData } from "@aws-amplify/storage";
 
 export default function Uploader({onSuccess, id, index}) {
     const [uploading, setUploadState] = useState(false);

@@ -1,3 +1,5 @@
+//'use client'
+
 import React, {useImperativeHandle} from 'react';
 import {makeStyles} from '@mui/material/styles';
 import Button from '@mui/material/Button';

@@ -16,7 +16,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import {mainListItems} from '../listItems';
-import {Switch, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 import BasicTable from "../component/BasicTable";
 import ImageGallery from "../component/ImageGallery";
@@ -178,14 +178,14 @@ export default function Dashboard() {
                 <div className={classes.appBarSpacer}/>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
-                        <Switch>
+                        <Routes>
                             <Route path="/editor">
                                 <BasicTable/>
                             </Route>
                             <Route path="/gallery">
                                 <ImageGallery/>
                             </Route>
-                        </Switch>
+                        </Routes>
                     </Grid>
                     <Box pt={4}>
                         <Copyright/>

@@ -1,7 +1,8 @@
+//'use client'
+
 import {useEffect, useState} from 'react';
 import {listImages} from "../graphql/queries";
 
-import {API, graphqlOperation} from 'aws-amplify';
 import {generateClient} from 'aws-amplify/api';
 
 const client = generateClient();

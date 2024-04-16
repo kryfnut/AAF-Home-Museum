@@ -3,7 +3,7 @@ import {Amplify} from 'aws-amplify';
 import {ApolloProvider} from 'react-apollo';
 import {ApolloProvider as ApolloHooksProvider} from "react-apollo-hooks";
 import client from './apollo-client';
-import {withAuthenticator} from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from './aws-exports';
 import Dashboard from "./page/Dashboard";
 import {BrowserRouter as Router} from "react-router-dom";

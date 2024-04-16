@@ -1,23 +1,21 @@
+import {Amplify} from 'aws-amplify';
 import {createAuthLink} from 'aws-appsync-auth-link';
 import {createSubscriptionHandshakeLink} from 'aws-appsync-subscription-link';
+import {ApolloClient, InMemoryCache, HttpLink, ApolloLink} from '@apollo/client';
 
-import {ApolloLink} from 'apollo-link';
-import {createHttpLink} from 'apollo-link-http';
-import {ApolloClient} from '@apollo/client';
-import {InMemoryCache} from 'apollo-cache-inmemory';
 
-import appSyncConfig from "./aws-exports";
+import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
-const url = appSyncConfig.aws_appsync_graphqlEndpoint;
-const region = appSyncConfig.aws_appsync_region;
+const url = awsconfig.aws_appsync_graphqlEndpoint;
+const region = awsconfig.aws_appsync_region;
 const auth = {
-  type: appSyncConfig.aws_appsync_authenticationType,
-  apiKey: appSyncConfig.aws_appsync_apiKey,
+  type: awsconfig.aws_appsync_authenticationType,
+  apiKey: awsconfig.aws_appsync_apiKey,
 };
 
-const httpLink = createHttpLink({uri: url});
+const httpLink = HttpLink({uri: url});
 
 const link = ApolloLink.from([
   createAuthLink({url, region, auth}),

@@ -1,3 +1,5 @@
+//'use client'
+
 import React, {useEffect, useState} from 'react';
 import useListPhotoKeys from "../api-hook/useListPhotoKeys";
 import {CircularProgress} from "@mui/material";
@@ -10,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Uploader from "./Uploader";
 
 import "../assets/s3-image.css";
-import {AmplifyS3Image} from '@aws-amplify/ui-react';
+import {Image} from '@aws-amplify/ui-react';
 
 const FixedGrid = function (props) {
     return (
@@ -55,12 +57,12 @@ export default function PhotoManager({id, onSuccess}, ref) {
             </div>
             <div style={{width: '80vw', minHeight: '100px', paddingTop: '10px'}}>
                 {
-                    data.map(({url}) => (<AmplifyS3Image key={url} imgKey={url}/>))
+                    data.map(({url}) => (<Image key={url} imgKey={url}/>))
                 }
             </div>
             <div style={{width: '80vw', minHeight: '100px'}}>
                 {
-                    currentPhotos.map(({key}) => (<AmplifyS3Image key={key} imgKey={key}/>))
+                    currentPhotos.map(({key}) => (<Image key={key} imgKey={key}/>))
                 }
             </div>
             <div>

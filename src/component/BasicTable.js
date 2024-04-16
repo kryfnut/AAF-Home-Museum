@@ -2,11 +2,9 @@ import React, {useRef} from "react";
 import {Grid, CircularProgress} from "@mui/material";
 import {ErrorOutlineTwoTone} from "@mui/icons-material";
 import MaterialTable from 'material-table';
-
 import InformationEditDialog from "./InformationEditDialog";
-
 import useListTable from "../api-hook/useListTable";
-import {listImages} from "../graphql/queries";
+
 
 const FixedGrid = function (props) {
     return (

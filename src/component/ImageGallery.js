@@ -1,10 +1,8 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import useListPhotoGallery from "../api-hook/useListPhotoGallery";
 import {CircularProgress, Grid} from "@mui/material";
 import {ErrorOutlineTwoTone} from "@mui/icons-material";
 import Gallery from "react-photo-gallery";
-
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';

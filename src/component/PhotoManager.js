@@ -1,12 +1,11 @@
 //'use client'
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import useListPhotoKeys from "../api-hook/useListPhotoKeys";
 import {CircularProgress} from "@mui/material";
 import {ErrorOutlineTwoTone} from "@mui/icons-material";
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
-import Divider from "@mui/material/Divider";
 import Avatar from '@mui/material/Avatar';
 
 import Uploader from "./Uploader";

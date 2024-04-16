@@ -15,7 +15,7 @@ const auth = {
   apiKey: awsconfig.aws_appsync_apiKey,
 };
 
-const httpLink = HttpLink({uri: url});
+const httpLink = new HttpLink({uri: url});
 
 const link = ApolloLink.from([
   createAuthLink({url, region, auth}),

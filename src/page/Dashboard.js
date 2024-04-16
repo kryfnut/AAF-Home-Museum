@@ -126,7 +126,7 @@ export default function Dashboard() {
     const toggleDrawer = () => {
         setOpen(!open);
     };
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+    //const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
         <div className={classes.root}>

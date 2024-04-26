@@ -1,6 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import {ThemeProvider, makeStyles} from '@mui/styles'
+import { makeStyles} from '@mui/styles'
+//import {ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -126,7 +127,7 @@ export default function Dashboard() {
     const toggleDrawer = () => {
         setOpen(!open);
     };
-    //const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
         <div className={classes.root}>
